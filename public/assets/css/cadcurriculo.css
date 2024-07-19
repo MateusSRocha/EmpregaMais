@@ -1,0 +1,93 @@
+body  {
+  font-family: Arial, sans-serif;
+  background-color: rgb(253, 255, 225);
+  margin: 0;
+  padding: 0;
+  
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+text-decoration: none;
+list-style: none;
+border: none;
+}
+
+header{
+display: flex;
+justify-content: space-around;
+padding-top:1rem ;
+align-items: center;
+text-align: center;
+width: 100%;
+top: 0;
+right: 0;
+z-index: 1000;
+position: fixed;
+transition: all .35s ease;
+background-color: #ffb6c1;
+padding: 14px 14%;
+
+
+}
+
+.form {
+width: 70%;
+display: grid;
+place-items: center;
+margin: auto;
+background-color: rgb(253, 255, 225);
+padding: 3rem;
+}
+
+.input-box input {
+margin: 0.6rem 0;
+padding: 0.8rem 1.2rem;
+border: none;
+border-radius: 10px;
+box-shadow: 1px 1px 6px #0000001c;
+font-size: 0.8rem;
+}
+
+
+.input-box input:hover {
+background-color: #eeeeee75;
+}
+
+
+.input-box input:focus-visible {
+outline: 1px solid #c87481;
+}
+
+
+.input-box label,
+.gender-title h6 {
+font-size: 0.75rem;
+font-weight: 600;
+color: #000000c0;
+}
+
+
+.input-box input::placeholder {
+color: #000000be;
+}
+
+
+.container {
+margin: 80px auto;
+width: 80%;
+height: 80vh;
+display: flex;
+}
+
+
+
+
+.form-header {
+margin-bottom: 3rem;
+display: flex;
+justify-content: space-between;
+}

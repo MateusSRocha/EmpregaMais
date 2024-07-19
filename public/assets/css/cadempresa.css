@@ -1,0 +1,140 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(253, 255, 225);
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background-color: #ffb6c1;
+}
+
+.back-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 1.5rem;
+  color: #000;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 0.5rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.form-header .title h1 {
+  font-size: 1.5rem;
+  color: #c87481;
+}
+
+.botao-inicio {
+  margin-left: auto;
+}
+
+.botao-inicio button {
+  background-color: #c87481;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  font-size: 1rem;
+  margin-left: 2rem;
+}
+
+.botao-inicio button:hover {
+  background-color: #a45268;
+}
+
+.botao-enviar input[type="submit"] {
+  background-color: #c87481;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.botao-enviar input[type="submit"]:hover {
+  background-color: #a45268;
+}
+
+.input-box {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.input-box label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000000c0;
+  margin-bottom: 0.3rem;
+}
+
+.input-box input {
+  width: 100%;
+  margin: 0.6rem 0;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px #0000001c;
+  font-size: 1rem;
+}
+
+.input-box input:hover {
+  background-color: #eeeeee75;
+}
+
+.input-box input:focus-visible {
+  outline: 1px solid #c87481;
+}
+

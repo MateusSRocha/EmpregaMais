@@ -1,0 +1,112 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(253, 255, 225);
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffb6c1;
+  transition: all 0.35s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 120px auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-header {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-header .title h1 {
+  font-size: 1.5rem;
+  color: #c87481;
+}
+
+.botao-login button {
+  background-color: #c87481;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao-login button:hover {
+  background-color: #a45268;
+}
+
+.botao-login a {
+  color: white;
+  text-decoration: none;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.input-box {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.input-box label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000000c0;
+  margin-bottom: 0.3rem;
+}
+
+.input-box input {
+  width: 100%;
+  margin: 0.6rem 0;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px #0000001c;
+  font-size: 1rem;
+}
+
+.input-box input:hover {
+  background-color: #eeeeee75;
+}
+
