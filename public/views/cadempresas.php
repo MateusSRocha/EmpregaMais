@@ -8,38 +8,43 @@
 </head>
 <body>
     <div class="container">
-        <div class="form">
-            <form action="cadempresa.php" method="post">
-                <div class="form-header">
-                    <div class="title">
-                        <h1>Cadastre sua empresa</h1>
+        <div class="info">
+            <h1>Informações</h1>
+            <p>Adicione informações ou alguma imagem para ficar mais bonito aqui Matheus.</p>
+        </div>
+        <div class="form-container">
+            
+            <div class="form">
+                <form action="cadempresa.php" method="post">
+                    <div class="form-header">
+                        <div class="title">
+                            <h1>Cadastre sua empresa</h1>
+                        </div>
                     </div>
-                    <div class="botao-inicio">
-                        <a href="index.php">
-                            <button type="button">Início</button>
-                        </a>
+                    <div class="input-box">
+                        <label for="cnpj">CNPJ:</label>
+                        <input type="text" id="cnpj" name="cnpj" placeholder="Informe o CNPJ da empresa" required>
                     </div>
-                </div>
-                <div class="input-box">
-                    <label for="cnpj">CNPJ:</label>
-                    <input type="text" id="cnpj" name="cnpj" placeholder="Informe o CNPJ da empresa" required>
-                </div>
-                <div class="input-box">
-                    <label for="endereco">Endereço:</label>
-                    <input type="text" id="endereco" name="endereco" placeholder="Informe o endereço da empresa" required>
-                </div>
-                <div class="input-box">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" placeholder="Informe o nome da empresa" required>
-                </div>
-                <div class="input-box">
-                    <label for="telefone">Telefone:</label>
-                    <input type="number" id="telefone" name="telefone" placeholder="Informe o telefone da empresa" required>
-                </div>
-                <div class="botao-enviar">
-                    <input type="submit" value="Enviar">
-                </div>
-            </form>
+                    <div class="input-box">
+                        <label for="endereco">Endereço:</label>
+                        <input type="text" id="endereco" name="endereco" placeholder="Informe o endereço da empresa" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Informe o nome da empresa" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="telefone">Telefone:</label>
+                        <input type="number" id="telefone" name="telefone" placeholder="Informe o telefone da empresa" required>
+                    </div>
+                    <div class="botao-enviar">
+                        <input type="submit" value="Enviar">
+                    </div>
+                </form>
+            </div>
+            <a href="index.php" class="back-button">
+                <ion-icon name="arrow-back-outline"></ion-icon> Voltar ao Início
+            </a>
         </div>
     </div>
 </body>

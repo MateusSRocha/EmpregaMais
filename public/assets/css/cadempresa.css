@@ -1,8 +1,13 @@
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: rgb(253, 255, 225);
-  margin: 0;
-  padding: 0;
+:root {
+  --roxo: #8e2de2;
+  --rosa: #b55ba1;
+  --violeta: #a76b9f;
+  --preto: #333333;
+  --cinza: #f3f3f3;
+  --branco: #ffffff;
+  --roxo-escuro: #6d1f7b;
+  --rosa-claro: #ffb6c1;
+  --rosa-escuro: #c87481;
 }
 
 * {
@@ -14,97 +19,94 @@ body {
   border: none;
 }
 
-header {
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--cinza);
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 100;
-  background-color: #ffb6c1;
-}
-
-.back-link {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  font-size: 1.5rem;
-  color: #000;
-  background-color: #fff;
-  border-radius: 50%;
-  padding: 0.5rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .container {
-  width: 90%;
-  max-width: 500px;
+  display: flex;
+  height: 90vh;
+  width: 90vw;
+  max-width: 1200px;
+  background: var(--branco);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.info {
+  flex: 1;
+  background-color: var(--roxo);
+  color: var(--branco);
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 30px auto;
-  background-color: #fff;
+}
+
+.info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.form-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 2rem;
-  border-radius: 10px;
+  background-color: var(--cinza);
+  position: relative;
+}
+
+.back-button {
+  color: var(--roxo);
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.back-button ion-icon {
+  margin-right: 0.5rem;
+}
+
+.back-button:hover {
+  color: var(--roxo-escuro);
 }
 
 .form {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  max-width: 400px;
+  background: var(--branco);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .form-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
   margin-bottom: 1.5rem;
 }
 
-.form-header .title h1 {
+.form-header h1 {
   font-size: 1.5rem;
-  color: #c87481;
-}
-
-.botao-inicio {
-  margin-left: auto;
-}
-
-.botao-inicio button {
-  background-color: #c87481;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border: none;
-  font-size: 1rem;
-  margin-left: 2rem;
-}
-
-.botao-inicio button:hover {
-  background-color: #a45268;
-}
-
-.botao-enviar input[type="submit"] {
-  background-color: #c87481;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border: none;
-  font-size: 1rem;
-  margin-top: 1rem;
-}
-
-.botao-enviar input[type="submit"]:hover {
-  background-color: #a45268;
+  color: var(--roxo);
+  margin: 0;
 }
 
 .input-box {
@@ -116,25 +118,40 @@ header {
   display: block;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #000000c0;
+  color: var(--preto);
   margin-bottom: 0.3rem;
 }
 
 .input-box input {
   width: 100%;
-  margin: 0.6rem 0;
   padding: 0.8rem 1.2rem;
   border: none;
   border-radius: 10px;
-  box-shadow: 1px 1px 6px #0000001c;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 .input-box input:hover {
-  background-color: #eeeeee75;
+  background-color: var(--cinza);
 }
 
 .input-box input:focus-visible {
-  outline: 1px solid #c87481;
+  outline: 1px solid var(--violeta);
 }
 
+.botao-enviar input[type="submit"] {
+  background-color: var(--roxo);
+  color: var(--branco);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.botao-enviar input[type="submit"]:hover {
+  background-color: var(--roxo-escuro);
+}

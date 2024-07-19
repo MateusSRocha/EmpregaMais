@@ -1,8 +1,10 @@
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: rgb(253, 255, 225);
-  margin: 0;
-  padding: 0;
+:root {
+  --roxo: #8e2de2;
+  --branco: #ffffff;
+  --cinza: #f3f3f3;
+  --roxo-escuro: #6d1f7b;
+  --preto: #333333;
+  --gradiente: linear-gradient(135deg, #8e2de2, #6d1f7b);
 }
 
 * {
@@ -10,73 +12,107 @@ body {
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  list-style: none;
-  border: none;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 5%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  background-color: #ffb6c1;
-  transition: all 0.35s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.container {
-  width: 90%;
-  max-width: 500px;
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--cinza);
+  min-height: 100vh;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 120px auto;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.form {
-  width: 100%;
+.container {
+  display: flex;
+  height: 90vh;
+  width: 90vw;
+  max-width: 1200px;
+  background: var(--branco);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.info {
+  flex: 1;
+  background: var(--gradiente);
+  color: var(--branco);
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.form-header {
+.info h1 {
+  font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
 }
 
-.form-header .title h1 {
+.info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.form-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: var(--cinza);
+  position: relative;
+}
+
+.back-button {
+  color: var(--roxo);
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+  margin-top: 2rem;
+}
+
+.back-button ion-icon {
+  margin-right: 0.5rem;
+}
+
+.back-button:hover {
+  color: var(--roxo-escuro);
+}
+
+.form {
+  width: 100%;
+  max-width: 400px;
+  background: var(--branco);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+}
+
+.form-header h1 {
   font-size: 1.5rem;
-  color: #c87481;
+  color: var(--roxo);
+  margin-bottom: 1.5rem;
 }
 
 .botao-login button {
-  background-color: #c87481;
-  color: white;
+  background-color: var(--roxo);
+  color: var(--branco);
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border: none;
 }
 
 .botao-login button:hover {
-  background-color: #a45268;
-}
-
-.botao-login a {
-  color: white;
-  text-decoration: none;
+  background-color: var(--roxo-escuro);
 }
 
 .input-group {
@@ -92,21 +128,24 @@ header {
   display: block;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #000000c0;
+  color: var(--preto);
   margin-bottom: 0.3rem;
 }
 
 .input-box input {
   width: 100%;
-  margin: 0.6rem 0;
   padding: 0.8rem 1.2rem;
   border: none;
   border-radius: 10px;
-  box-shadow: 1px 1px 6px #0000001c;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 .input-box input:hover {
-  background-color: #eeeeee75;
+  background-color: var(--cinza);
 }
 
+.input-box input:focus-visible {
+  outline: 1px solid var(--roxo);
+}

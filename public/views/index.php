@@ -10,7 +10,7 @@
     <div class="fundo">
         <header>
             <div class="logo">
-                <h1>EMPREGA MAIS </h1>
+                <h1>EMPREGAMAIS </h1>
             </div>
             <div class="cabecalho_link">
                 <li>
@@ -32,6 +32,6 @@
 talentosos em busca de oportunidades. Aqui, você encontrará uma plataforma
 dinâmica projetada para conectar você às melhores oportunidades de emprego em
 sua área de atuação. Nosso objetivo é ser o seu guia confiável, fornecendo as
-ferramentas e recursos necessários para encontrar um emprego. Explore agora e descubra como podemos ajudá-lo a avançar em sua carreira. </p>    
+ferramentas e recursos necessários para encontrar um emprego. Explore agora e descubra como podemos ajudá-lo a avançar em sua carreira. </p>
 </body>
 </html>
