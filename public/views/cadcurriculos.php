@@ -40,7 +40,7 @@
                             <label for="genero">Gênero:</label>
                             <input type="radio" name="sexo" value="M"> Masculino
                             <input type="radio" name="sexo" value="F"> Feminino
-                            <input type="radio" name="sexo" value="O"> Outro
+                            <input type="radio" name="sexo" value="O"> Prefiro Não Dizer
                         </div>
                         <div class="input-box">
                             <label for="endereco">Endereço:</label>
@@ -56,9 +56,10 @@
                         </div>
                         <div class="input-box">
                             <label for="temptrab">Tempo de atuação:</label>
-                            <input type="text" id="temptrab" name="temptrab" placeholder="Exemplo: 2 anos" required>
+                            <input type="number" id="temptrab" name="temptrab" placeholder="Exemplo: 2" required>
                         </div>
                         <div class="input-box">
+                            <label for="temptrab">Currículo Documentado:</label>
                             <input type="file" name="pdf_arquivo" accept=".pdf" required>
                         </div>
                     </div>

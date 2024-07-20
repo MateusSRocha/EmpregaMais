@@ -3,6 +3,7 @@
   --rosa: #b55ba1;
   --violeta: #a76b9f;
   --amarelo: #ffd700;
+  --amarelo-claro: #ffea70;
   --preto: #333333;
   --cinza: #f3f3f3;
   --branco: #ffffff;
@@ -53,6 +54,9 @@ header {
   font-weight: 700;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
+.logo span {
+  color: var(--amarelo);
+}
 
 .cabecalho_link {
   display: flex;
@@ -67,7 +71,7 @@ header {
 }
 
 .cabecalho_link a:hover {
-  color: var(--amarelo);
+  color: var(--amarelo-claro);
   transform: scale(1.1);
 }
 
@@ -92,9 +96,11 @@ header {
 }
 
 .meio p {
+  text-indent: 50px;
   font-size: 1.2rem;
   color: var(--preto);
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
+  text-align: justify;
 }
