@@ -15,7 +15,7 @@
         <div class="form-container">
             
             <div class="form">
-                <form action="cadempresa.php" method="post">
+                <form action="" method="post">
                     <div class="form-header">
                         <div class="title">
                             <h1>Cadastre sua empresa</h1>
@@ -38,7 +38,7 @@
                         <input type="number" id="telefone" name="telefone" placeholder="Informe o telefone da empresa" required>
                     </div>
                     <div class="botao-enviar">
-                        <input type="submit" value="Enviar">
+                        <input type="submit" value="Enviar" name="cadEmpresa">
                     </div>
                 </form>
             </div>

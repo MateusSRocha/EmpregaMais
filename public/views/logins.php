@@ -15,7 +15,7 @@
         <div class="form-container">
             
             <div class="form">
-                <form action="login.php" method="post">
+                <form action="" method="post">
                     <div class="form-header">
                         <h1>LOGIN</h1>
                     </div>
@@ -29,7 +29,7 @@
                             <input id="senha" type="password" name="senha" placeholder="Informe sua senha" required>
                         </div>
                         <div class="botao-login">
-                            <button type="submit">Confirmar</button>
+                            <button type="submit" name="login">Confirmar</button>
                         </div>
                     </div>
                 </form>
