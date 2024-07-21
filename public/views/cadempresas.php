@@ -9,8 +9,7 @@
 <body>
     <div class="container">
         <div class="info">
-            <h1>Informações</h1>
-            <p>Adicione informações ou alguma imagem para ficar mais bonito aqui Matheus.</p>
+            <img src="public/assets/images/Sign up-cuate.svg" alt="">
         </div>
         <div class="form-container">
             

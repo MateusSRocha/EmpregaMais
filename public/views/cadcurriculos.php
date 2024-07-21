@@ -30,6 +30,16 @@
                             <input type="text" id="nome" name="nome" placeholder="Informe seu nome completo" required>
                         </div>
                         <div class="input-box">
+                            <label for="data_nascimento">Data de Nascimento:</label>
+                            <input type="date" id="datanas" name="datanasc" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="genero">Gênero:</label>
+                            <input type="radio" name="sexo" value="M"> Masculino
+                            <input type="radio" name="sexo" value="F"> Feminino
+                            <input type="radio" name="sexo" value="O"> Outro
+                        </div>
+                        <div class="input-box">
                             <label for="endereco">Endereço:</label>
                             <input type="text" id="endereco" name="endereco" placeholder="Informe seu endereço" required>
                         </div>
@@ -40,9 +50,10 @@
                         </div>
                         <div class="input-box">
                             <label for="temptrab">Tempo de atuação:</label>
-                            <input type="text" id="temptrab" name="temptrab" placeholder="Exemplo: 2 anos" required>
+                            <input type="number" id="temptrab" name="temptrab" placeholder="Exemplo: 2" required>
                         </div>
                         <div class="input-box">
+                            <label for="temptrab">Currículo Documentado:</label>
                             <input type="file" name="pdf_arquivo" accept=".pdf" required>
                         </div>
                     </div>

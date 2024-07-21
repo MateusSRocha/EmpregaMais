@@ -9,8 +9,7 @@
 <body>
     <div class="container">
         <div class="info">
-            <h1>Informações</h1>
-            <p>adicione alguma coisa aqui matheus para ficar mais bonito.aaaaaa</p>
+            <img src="public/assets/images/Login-amico.svg" alt="Login">
         </div>
         <div class="form-container">
             
