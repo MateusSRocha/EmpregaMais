@@ -16,6 +16,9 @@
             </div>
             <div class="cabecalho_link">
                 <li>
+                    <a href="cadastro.php">Cadastro</a>
+                </li>
+                <li>
                     <a href="logins.php">Login</a>
                 </li>
                 <li>
@@ -24,6 +27,7 @@
                 <li>
                     <a href="cadcurriculos.php">Adicionar currículo</a>
                 </li>
+                
             </div>
         </header>
         <div class="meio">
