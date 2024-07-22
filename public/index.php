@@ -1,12 +1,18 @@
 <?php
 
+session_start();
+
 if (empty($_GET['url'])) {
     $url = 'index.php';
 } else {
     $url = $_GET['url'];
 }
 
-require('./views/' . $url);
+if (!isset($_SESSION['login'])) {
+    require('./views/log/' . $url);
+} else {
+    require('./views/src/' . $url);
+}
 
 $con = mysqli_connect('localhost', 'root', '', 'empregamais');
 
@@ -15,9 +21,10 @@ if (isset($_POST['login'])) {
     $senha = $_POST['senha'];
 
     if ($con) {
-        $analisa = "SELECT * FROM cliente WHERE email='$email' AND senha='$senha'";
+        $analisa = "SELECT * FROM usuario WHERE email='$email' AND senha='$senha'";
         $result = mysqli_query($con, $analisa);
         if (mysqli_num_rows($result) > 0) {
+            $_SESSION['login'] = true;
             echo "<script>window.location.href = './'</script>";
         } else {
             echo "<script>alert('Email ou senha incorretos')</script>";
@@ -30,38 +37,36 @@ if (isset($_POST['login'])) {
     }
 }
 
-if (isset($_POST['cadCurriculo'])) {
+if (isset($_POST['cadastro'])) {
     $email = $_POST['email'];
     $nome = $_POST['nome'];
     $telefone = $_POST['telefone'];
-    $datanasc = $_POST['datanasc'];
+    $senha = $_POST['senha'];
     $genero = $_POST['sexo'];
-    $endereco = $_POST['endereco'];
-    $area = $_POST['area'];
-    $temptrab = $_POST['temptrab'];
-    // $pdfCurri = $_POST['pdf_arquivo'];
 
     if ($con) {
-        $query = "SELECT * FROM curriculo WHERE email = '$email'";
+        $query = "SELECT * FROM usuario WHERE email = '$email'";
         $result = mysqli_query($con, $query);
         if (mysqli_num_rows($result) > 0) {
             echo "<script>alert('Email já existente')</script>";
-            echo "<script>window.location.href = './cadcurriculos.php'</script>";
+            echo "<script>window.location.href = './cadastro.php'</script>";
             die();
         }
 
-        $query = "SELECT * FROM curriculo WHERE telefone = '$telefone'";
+        $query = "SELECT * FROM usuario WHERE telefone = '$telefone'";
         $result = mysqli_query($con, $query);
         if (mysqli_num_rows($result) > 0) {
             echo "<script>alert('Telefone já existente')</script>";
-            echo "<script>window.location.href = './cadcurriculos.php'</script>";
+            echo "<script>window.location.href = './cadastro.php'</script>";
             die();
         }
 
-        $query = "INSERT INTO curriculo VALUES (NULL, '$email', '$nome', '$telefone','$datanasc', '$genero', '$endereco', '$area', '$temptrab')";
+        $query = "INSERT INTO usuario VALUES (NULL, '$email', '$nome', '$telefone','$senha', '$genero')";
         $result = mysqli_query($con, $query);
 
         mysqli_close($con);
+        $_SESSION['login'] = true;
+        echo "<script>window.location.href = './'</script>";
     } else {
         echo 'Erro na conexão com o banco de dados: ' . mysqli_connect_error();
     }
@@ -77,6 +82,7 @@ if (isset($_POST['cadEmpresa'])) {
         $query = "INSERT INTO empresa  VALUES (NULL, '$cnpj', '$endereco', '$nome', '$telefone')";
         $result = mysqli_query($con, $query);
         if ($result) {
+            $_SESSION['login'] = true;
             echo "<script>window.location.href = './'</script>";
         } else {
             echo 'Erro ao inserir dados: ' . mysqli_error($con);

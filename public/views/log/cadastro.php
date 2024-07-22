@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Currículo</title>
-    <link rel="stylesheet" href="public/assets/css/cadastro.css">
+    <title>Cadastro-se</title>
+    <link rel="stylesheet" href="public/assets/css/log/cadastro.css">
 </head>
 
 <body>
@@ -44,12 +44,12 @@
                     </div>
                     <div class="input-box">
                             <label for="genero">Gênero:</label>
-                            <input type="radio" name="sexo" value="M"> Masculino
-                            <input type="radio" name="sexo" value="F"> Feminino
-                            <input type="radio" name="sexo" value="O"> Outro
+                            <input type="radio" name="sexo" value="M" id="M"> <label for="M">Masculino</label>
+                            <input type="radio" name="sexo" value="F" id="F"> <label for="F">Feminino</label>
+                            <input type="radio" name="sexo" value="O" id="O"> <label for="O">Outro</label>
                         </div>
                     <div class="botao-login">
-                        <button type="submit" name="cadCurriculo">Confirmar</button>
+                        <button type="submit" name="cadastro">Confirmar</button>
                     </div>
                 </form>
             </div><a href="index.php" class="back-button"><ion-icon name="arrow-back-outline"></ion-icon> Voltar para o início</a>

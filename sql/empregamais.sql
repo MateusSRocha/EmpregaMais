@@ -2,6 +2,16 @@ create schema empregamais;
 
 use empregamais;
 
+CREATE TABLE usuario (
+	id INT NOT NULL AUTO_INCREMENT,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    nome TEXT NOT NULL,
+    telefone TEXT NOT NULL,
+    senha VARCHAR(100) NOT NULL,
+    genero ENUM('M', 'F', 'O') NOT NULL,
+    PRIMARY KEY (id)
+);
+
 CREATE TABLE curriculo (
 	id INT NOT NULL AUTO_INCREMENT,
     email VARCHAR(100) NOT NULL UNIQUE,
@@ -13,15 +23,6 @@ CREATE TABLE curriculo (
     area VARCHAR(300) NOT NULL,
     temptrab VARCHAR(30) NOT NULL,
     PRIMARY KEY (id)
-);
-
-CREATE TABLE cliente (
-	id INT NOT NULL AUTO_INCREMENT,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    senha VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (email)
-        REFERENCES curriculo (email)
 );
 
 CREATE TABLE empresa (

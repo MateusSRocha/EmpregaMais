@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Empresa</title>
-    <link rel="stylesheet" href="public/assets/css/cadempresa.css">
+    <link rel="stylesheet" href="public/assets/css/log/cadempresa.css">
 </head>
 <body>
     <div class="container">
