@@ -165,14 +165,6 @@ body {
   background-color: var(--cinza);
 }
 
-.input-box input[type="text"]:focus-visible,
-.input-box input[type="email"]:focus-visible,
-.input-box input[type="date"]:focus-visible,
-.input-box input[type="number"]:focus-visible,
-.input-box input[type="password"]:focus-visible {
-  outline: 1px solid var(--roxo);
-}
-
 .input-box .radio-group {
   display: flex;
   align-items: center;
