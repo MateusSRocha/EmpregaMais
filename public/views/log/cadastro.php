@@ -43,11 +43,17 @@
                         </div>
                     </div>
                     <div class="input-box">
-                            <label for="genero">Gênero:</label>
-                            <input type="radio" name="sexo" value="M" id="M"> <label for="M">Masculino</label>
-                            <input type="radio" name="sexo" value="F" id="F"> <label for="F">Feminino</label>
-                            <input type="radio" name="sexo" value="O" id="O"> <label for="O">Outro</label>
+                        <label for="genero">Gênero:</label>
+                        <div class="radio-group">
+                            <input type="radio" name="sexo" value="M" id="M">
+                            <label for="M">Masculino</label>
+                            <input type="radio" name="sexo" value="F" id="F">
+                            <label for="F">Feminino</label>
+                            <input type="radio" name="sexo" value="O" id="O">
+                            <label for="O">Outro</label>
                         </div>
+                    </div>
+
                     <div class="botao-login">
                         <button type="submit" name="cadastro">Confirmar</button>
                     </div>
