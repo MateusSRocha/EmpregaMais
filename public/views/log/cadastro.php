@@ -35,7 +35,7 @@
                         
                         <div class="input-box">
                             <label for="telefone">Telefone:</label>
-                            <input type="text" id="telefone" name="telefone" placeholder="Informe seu telefone" required>
+                            <input type="number" id="telefone" name="telefone" placeholder="Informe seu telefone" required>
                         </div>
                         <div class="input-box">
                             <label for="password">senha:</label>
