@@ -11,67 +11,84 @@
     --gradiente: linear-gradient(135deg, #8e2de2, #b55ba1);
   }
   
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--cinza);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    color: var(--preto);
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    border: none;
-  }
-  
-  .fundo {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    background: var(--gradiente);
-  }
-  
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    background: var(--gradiente);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--cinza);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: var(--preto);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+}
+
+.fundo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: var(--gradiente);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: var(--gradiente);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
 
-  .logo h1 {
-    color: var(--branco);
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  .logo span {
-    color: var(--amarelo);
-  }
-  
-  .cabecalho_link {
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .cabecalho_link a {
-    color: var(--branco);
-    font-weight: 600;
-    transition: color 0.3s ease, transform 0.3s ease;
-    font-size: 1.1rem;
-  }
-  
-  .cabecalho_link a:hover {
-    color: var(--amarelo-claro);
-    transform: scale(1.1);
-  }
+.logo h1 {
+  color: var(--branco);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.logo span {
+  color: var(--amarelo);
+}
+
+.cabecalho_link {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.cabecalho_link a {
+  color: var(--branco);
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.cabecalho_link a:hover {
+  color: var(--amarelo-claro);
+  transform: scale(1.1);
+}
+
+.cabecalho_link li button {
+  background-color: var(--roxo);
+  color: var(--branco);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.cabecalho_link li button:hover {
+  color: var(--amarelo-claro);
+}
+

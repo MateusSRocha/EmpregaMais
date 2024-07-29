@@ -16,6 +16,11 @@
                 <li>
                     <a href="cadastro.php">Cadastrar curriculo</a>
                 </li>
+                <li>
+                    <form method="POST">
+                        <button type="submit" name="sair">Sair</button>
+                    </form>
+                </li>
             </div>
         </header>
     

@@ -93,3 +93,9 @@ if (isset($_POST['cadEmpresa'])) {
         echo 'Erro na conexão com o banco de dados: ' . mysqli_connect_error();
     }
 }
+
+if (isset($_POST['sair'])) {
+    session_destroy();
+    echo "<script>window.location.href = './index.php'</script>";
+    exit();
+}
