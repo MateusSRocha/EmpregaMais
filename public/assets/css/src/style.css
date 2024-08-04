@@ -92,3 +92,56 @@ header {
   color: var(--amarelo-claro);
 }
 
+main {
+  padding: 2rem 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  
+}
+
+.empresas-recrutando {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.empresas-recrutando h2 {
+    text-align: center;
+}
+
+.empresa {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #b55ba1;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.empresa h3 {
+  text-align: center;
+}
+
+.empresa p {
+    margin: 15px 100px;
+    text-align: justify;
+    
+}
+
+.empresa button {
+  background-color: var(--roxo);
+  color: var(--branco);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  font-size: 1rem;
+}
+
+.empresa button:hover {
+  color: var(--amarelo-claro);
+}
