@@ -28,6 +28,7 @@ CREATE TABLE curriculo (
 CREATE TABLE empresa (
 	id INT NOT NULL AUTO_INCREMENT,
     cnpj VARCHAR(50) NOT NULL UNIQUE,
+    senha VARCHAR(50) NOT NULL,
     endereco VARCHAR(100) NOT NULL,
     nome VARCHAR(100) NOT NULL,
     telefone VARCHAR(50) NOT NULL,

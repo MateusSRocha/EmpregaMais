@@ -22,7 +22,10 @@
                     <a href="logins.php">Login</a>
                 </li>
                 <li>
-                    <a href="cadempresas.php">Cadastrar empresa</a>
+                    <a href="cadempresas.php">Cadastrar de empresa</a>
+                </li>
+                <li>
+                    <a href="loginempresa.php">Login de empresa</a>
                 </li>
 
             </div>

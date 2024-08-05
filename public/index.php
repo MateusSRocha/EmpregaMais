@@ -11,7 +11,11 @@ if (empty($_GET['url'])) {
 if (!isset($_SESSION['login'])) {
     require('./views/log/' . $url);
 } else {
-    require('./views/src/' . $url);
+    if(!isset($_SESSION['empresa'])) {
+        require('./views/user/' . $url);
+    } else {
+        require('./views/inc/' . $url);
+    }
 }
 
 $con = mysqli_connect('localhost', 'root', '', 'empregamais');
@@ -74,15 +78,17 @@ if (isset($_POST['cadastro'])) {
 
 if (isset($_POST['cadEmpresa'])) {
     $cnpj = $_POST['cnpj'];
+    $senha = $_POST['senha'];
     $endereco = $_POST['endereco'];
     $nome = $_POST['nome'];
     $telefone = $_POST['telefone'];
 
     if ($con) {
-        $query = "INSERT INTO empresa  VALUES (NULL, '$cnpj', '$endereco', '$nome', '$telefone')";
+        $query = "INSERT INTO empresa  VALUES (NULL, '$cnpj', '$senha', '$endereco', '$nome', '$telefone')";
         $result = mysqli_query($con, $query);
         if ($result) {
             $_SESSION['login'] = true;
+            $_SESSION['empresa'] = true;
             echo "<script>window.location.href = './'</script>";
         } else {
             echo 'Erro ao inserir dados: ' . mysqli_error($con);
@@ -94,7 +100,30 @@ if (isset($_POST['cadEmpresa'])) {
     }
 }
 
+if (isset($_POST['loginEmpresa'])) {
+    $cnpj = $_POST['cnpj'];
+    $senha = $_POST['senha'];
+
+    if ($con) {
+        $analisa = "SELECT * FROM empresa WHERE cnpj='$cnpj' AND senha='$senha'";
+        $result = mysqli_query($con, $analisa);
+        if (mysqli_num_rows($result) > 0) {
+            $_SESSION['login'] = true;
+            $_SESSION['empresa'] = true;
+            echo "<script>window.location.href = './'</script>";
+        } else {
+            echo "<script>alert('CNPJ ou senha incorretos')</script>";
+            echo "<script>window.location.href = './loginempresa.php'</script>";
+        }
+
+        mysqli_close($con);
+    } else {
+        echo 'Erro na conexão com o banco : ';
+    }
+}
+
 if (isset($_POST['sair'])) {
+    session_unset();
     session_destroy();
     echo "<script>window.location.href = './index.php'</script>";
     exit();

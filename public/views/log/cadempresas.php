@@ -25,6 +25,10 @@
                         <input type="text" id="cnpj" name="cnpj" placeholder="Informe o CNPJ da empresa" required>
                     </div>
                     <div class="input-box">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" placeholder="Informe a senha para empresa" required>
+                    </div>
+                    <div class="input-box">
                         <label for="endereco">Endereço:</label>
                         <input type="text" id="endereco" name="endereco" placeholder="Informe o endereço da empresa" required>
                     </div>

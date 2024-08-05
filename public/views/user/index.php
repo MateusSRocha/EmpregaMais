@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="public/assets/css/src/style.css">
+    <link rel="stylesheet" href="public/assets/css/user/style.css">
 </head>
 <body>
     <div class="fundo">
