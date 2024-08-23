@@ -9,6 +9,7 @@ CREATE TABLE usuario (
     telefone TEXT NOT NULL,
     senha VARCHAR(100) NOT NULL,
     genero ENUM('M', 'F', 'O') NOT NULL,
+    datacadastro DATE,
     PRIMARY KEY (id)
 );
 
@@ -32,5 +33,6 @@ CREATE TABLE empresa (
     endereco VARCHAR(100) NOT NULL,
     nome VARCHAR(100) NOT NULL,
     telefone VARCHAR(50) NOT NULL,
+    datacadastro DATE,
     PRIMARY KEY (id)
 );
