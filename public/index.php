@@ -47,6 +47,7 @@ if (isset($_POST['cadastro'])) {
     $telefone = $_POST['telefone'];
     $senha = $_POST['senha'];
     $genero = $_POST['sexo'];
+    $datacadastro = date('Y-m-d');
 
     if ($con) {
         $query = "SELECT * FROM usuario WHERE email = '$email'";
@@ -65,7 +66,7 @@ if (isset($_POST['cadastro'])) {
             die();
         }
 
-        $query = "INSERT INTO usuario VALUES (NULL, '$email', '$nome', '$telefone','$senha', '$genero')";
+        $query = "INSERT INTO usuario VALUES (NULL, '$email', '$nome', '$telefone','$senha', '$genero','$datacadastro')";
         $result = mysqli_query($con, $query);
 
         mysqli_close($con);
@@ -82,9 +83,10 @@ if (isset($_POST['cadEmpresa'])) {
     $endereco = $_POST['endereco'];
     $nome = $_POST['nome'];
     $telefone = $_POST['telefone'];
+    $datacadastro = date('Y-m-d');
 
     if ($con) {
-        $query = "INSERT INTO empresa  VALUES (NULL, '$cnpj', '$senha', '$endereco', '$nome', '$telefone')";
+        $query = "INSERT INTO empresa  VALUES (NULL, '$cnpj', '$senha', '$endereco', '$nome', '$telefone','$datacadastro')";
         $result = mysqli_query($con, $query);
         if ($result) {
             $_SESSION['login'] = true;

@@ -14,7 +14,7 @@
             </div>
             <div class="cabecalho_link">
                 <li>
-                    <a href="cadastro.php">Cadastrar curriculo</a>
+                    <a href="#">Cadastrar curriculo</a>
                 </li>
                 <li>
                     <form method="POST">

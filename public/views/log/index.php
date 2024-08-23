@@ -16,7 +16,7 @@
             </div>
             <div class="cabecalho_link">
                 <li>
-                    <a href="cadastro.php">Cadastro</a>
+                    <a href="cadastro.php">Cadastro Profissinal</a>
                 </li>
                 <li>
                     <a href="logins.php">Login</a>
