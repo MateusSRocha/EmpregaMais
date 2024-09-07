@@ -14,11 +14,11 @@
             </div>
             <div class="cabecalho_link">
                 <li>
-                    <input type="text" name="procura" id="procura" placeholder="Oque você procura?" oninput="opcoes(this.value)">
-                    <button onclick="procura()"><i class="bi bi-search"></i></button>
-                </li>
-                <li>
                     <a href="#">Cadastrar curriculo</a>
+                </li>
+                <li class="search-item">
+                    <input type="text" name="procura" id="procura" placeholder="O que você procura?" oninput="opcoes(this.value)">
+                    <button onclick="procura()"><i class="bi bi-search"></i></button>
                 </li>
                 <li>
                     <form method="POST">
