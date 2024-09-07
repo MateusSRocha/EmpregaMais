@@ -14,6 +14,10 @@
             </div>
             <div class="cabecalho_link">
                 <li>
+                    <input type="text" name="procura" id="procura" placeholder="Oque você procura?" oninput="opcoes(this.value)">
+                    <button onclick="procura()"><i class="bi bi-search"></i></button>
+                </li>
+                <li>
                     <a href="#">Cadastrar curriculo</a>
                 </li>
                 <li>
@@ -26,17 +30,42 @@
         <main>
             <div class="empresas-recrutando">
                 <h2>Empresas que estão recrutando</h2>
-                <div class="empresa">
-                    <h3>Empresa A</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore repellat quas magnam doloremque ducimus est unde odio natus facere quam ratione ullam, inventore rem illum, deserunt deleniti voluptatum suscipit aspernatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nobis voluptatibus ex repellat nam et, blanditiis dolore voluptatum, reiciendis quia esse tempore ipsum eum harum ad aperiam eius impedit asperiores.</p>
-                    <button type="button" onclick="location.href='enviar_curriculo.php?empresa=EmpresaA'">Enviar currículo</button>
-                </div>
-                <div class="empresa">
-                    <h3>Empresa B</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore repellat quas magnam doloremque ducimus est unde odio natus facere quam ratione ullam, inventore rem illum, deserunt deleniti voluptatum suscipit aspernatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nobis voluptatibus ex repellat nam et, blanditiis dolore voluptatum, reiciendis quia esse tempore ipsum eum harum ad aperiam eius impedit asperiores.</p>
-                    <button type="button" onclick="location.href='enviar_curriculo.php?empresa=EmpresaB'">Enviar currículo</button>
-                </div>
+                <table class="vagasEmprego">
+                    <thead>
+                        <tr>
+                            <th>Qt.</th>
+                            <th>Nome da empresa</th>
+                            <th>Vaga</th>
+                            <th>Experiência</th>
+                            <th>Escolaridade</th>
+                            <th>Detalhes da Vaga</th>
+                            <th>Ver</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Empresa A</td>
+                            <td>Desenvolvedor</td>
+                            <td>6 anos</td>
+                            <td>Sup. Completo</td>
+                            <td></td>
+                            <td><button><i class="bi bi-search"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Empresa B</td>
+                            <td>Designer</td>
+                            <td>6 meses</td>
+                            <td>Médio Completo</td>
+                            <td>Ter trabalhado em equipes que usavam modelo espiral</td>
+                            <td><button><i class="bi bi-search"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </main>
+
+        <script src="public/assets/js/script.js"></script>
 </body>
 </html>

@@ -1,16 +1,18 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
 :root {
-    --roxo: #8e2de2;
-    --rosa: #b55ba1;
-    --violeta: #a76b9f;
-    --amarelo: #ffd700;
-    --amarelo-claro: #ffea70;
-    --preto: #333333;
-    --cinza: #f3f3f3;
-    --branco: #ffffff;
-    --roxo-escuro: #6d1f7b;
-    --gradiente: linear-gradient(135deg, #8e2de2, #b55ba1);
-  }
-  
+  --roxo: #8e2de2;
+  --rosa: #b55ba1;
+  --violeta: #a76b9f;
+  --amarelo: #ffd700;
+  --amarelo-claro: #ffea70;
+  --preto: #333333;
+  --cinza: #f3f3f3;
+  --branco: #ffffff;
+  --roxo-escuro: #6d1f7b;
+  --gradiente: linear-gradient(135deg, #8e2de2, #b55ba1);
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--cinza);
@@ -55,6 +57,7 @@ header {
   font-weight: 700;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 .logo span {
   color: var(--amarelo);
 }
@@ -97,51 +100,25 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  
 }
 
 .empresas-recrutando {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .empresas-recrutando h2 {
-    text-align: center;
-}
-
-.empresa {
-    margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #b55ba1;
-    border-radius: 8px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-
-.empresa h3 {
   text-align: center;
 }
 
-.empresa p {
-    margin: 15px 100px;
-    text-align: justify;
-    
+table.vagasEmprego {
+  width: 100%;
+  height: auto;
+  border-collapse: collapse;
 }
 
-.empresa button {
-  background-color: var(--roxo);
-  color: var(--branco);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border: none;
-  font-size: 1rem;
-}
-
-.empresa button:hover {
-  color: var(--amarelo-claro);
+.vagasEmprego th, .vagasEmprego tr, .vagasEmprego td {
+  border: 1px solid #000;
 }

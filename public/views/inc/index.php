@@ -25,17 +25,34 @@
         </header>
         <main>
             <div class="curriculos-disponiveis">
-                <h2>Currículos de Usuários</h2>
-                <div class="curriculo">
-                    <h3>Usuário A</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore repellat quas magnam doloremque ducimus est unde odio natus facere quam ratione ullam, inventore rem illum, deserunt deleniti voluptatum suscipit aspernatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nobis voluptatibus ex repellat nam et, blanditiis dolore voluptatum, reiciendis quia esse tempore ipsum eum harum ad aperiam eius impedit asperiores.</p>
-                    <button type="button" onclick="location.href='falar_com_usuario.php?usuari=UsuarioA'">Falar com Usuário</button>
-                </div>
-                <div class="curriculo">
-                    <h3>Usuário B</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore repellat quas magnam doloremque ducimus est unde odio natus facere quam ratione ullam, inventore rem illum, deserunt deleniti voluptatum suscipit aspernatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nobis voluptatibus ex repellat nam et, blanditiis dolore voluptatum, reiciendis quia esse tempore ipsum eum harum ad aperiam eius impedit asperiores.</p>
-                    <button type="button" onclick="location.href='falar_com_usuario.php?usuari=UsuarioB'">Falar com Usuário</button>
-                </div>
+                <h2>Usuários</h2>
+                <table class="usuarios">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Área de atuação</th>
+                            <th>Experiência</th>
+                            <th>Escolaridade</th>
+                            <th>Ver</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Usuário A</td>
+                            <td>Desenvolvedor</td>
+                            <td>6 anos</td>
+                            <td>Sup. Completo</td>
+                            <td><button><i class="bi bi-search"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>Usuário B</td>
+                            <td>Designer</td>
+                            <td>6 meses</td>
+                            <td>Médio Completo</td>
+                            <td><button><i class="bi bi-search"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </main>
 </body>

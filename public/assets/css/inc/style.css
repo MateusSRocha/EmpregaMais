@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
 :root {
     --roxo: #8e2de2;
     --rosa: #b55ba1;
@@ -111,37 +113,12 @@ main {
     text-align: center;
 }
 
-.curriculo {
-    margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #b55ba1;
-    border-radius: 8px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+table.usuarios {
+  width: 100%;
+  height: auto;
+  border-collapse: collapse;
 }
 
-.curriculo h3 {
-  text-align: center;
-}
-
-.curriculo p {
-    margin: 15px 100px;
-    text-align: justify;
-    
-}
-
-.curriculo button {
-  background-color: var(--roxo);
-  color: var(--branco);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border: none;
-  font-size: 1rem;
-}
-
-.curriculo button:hover {
-  color: var(--amarelo-claro);
+.usuarios th, .usuarios tr, .usuarios td {
+  border: 1px solid #000;
 }
