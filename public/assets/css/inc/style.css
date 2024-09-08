@@ -107,22 +107,62 @@ main {
 }
 
 .curriculos-disponiveis {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--branco);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
 .curriculos-disponiveis h2 {
-    text-align: center;
+  text-align: center;
+  color: var(--preto);
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 table.usuarios {
   width: 100%;
-  height: auto;
   border-collapse: collapse;
+  background-color: var(--cinza);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.usuarios th, .usuarios tr, .usuarios td {
-  border: 1px solid #000;
+.usuarios th, .usuarios td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.usuarios th {
+  background-color: var(--roxo);
+  color: var(--branco);
+  font-weight: 600;
+}
+
+.usuarios tr:nth-child(even) {
+  background-color: var(--cinza);
+}
+
+.usuarios tr:hover {
+  background-color: var(--violeta);
+  color: var(--branco);
+}
+
+.usuarios td button {
+  background-color: var(--roxo-escuro);
+  color: var(--branco);
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.usuarios td button:hover {
+  background-color: var(--roxo);
+  color: var(--amarelo-claro);
+}
+
+.usuarios td i {
+  font-size: 1.2rem;
 }

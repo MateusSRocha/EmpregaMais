@@ -142,22 +142,61 @@ main {
 }
 
 .empresas-recrutando {
-  background-color: #fff;
+  background-color: var(--branco);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
 .empresas-recrutando h2 {
   text-align: center;
+  color: var(--preto);
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 table.vagasEmprego {
   width: 100%;
-  height: auto;
   border-collapse: collapse;
+  background-color: var(--cinza);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.vagasEmprego th, .vagasEmprego tr, .vagasEmprego td {
-  border: 1px solid #000;
+.vagasEmprego th, .vagasEmprego td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.vagasEmprego th {
+  background-color: var(--roxo);
+  color: var(--branco);
+  font-weight: 600;
+}
+
+.vagasEmprego tr:nth-child(even) {
+  background-color: var(--cinza);
+}
+
+.vagasEmprego tr:hover {
+  background-color: var(--violeta);
+  color: var(--branco);
+}
+
+.vagasEmprego td button {
+  background-color: var(--roxo);
+  color: var(--branco);
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.vagasEmprego td button:hover {
+  background-color: var(--roxo);
+}
+
+.vagasEmprego td i {
+  font-size: 1.2rem;
 }
