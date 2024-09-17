@@ -17,26 +17,20 @@
             </div>
             <div class="cabecalho_link">
                 <li>
-                    <a href="sobre.php">Sobre Nós</a>
-                </li>
-                <li>
-                    <a href="logins.php">Tutoriais</a>
+                    <a href="index.php">Voltar</a>
                 </li>
             </div>
         </header>
         <div class="meio">
-            <h1>EMPREGA<span>MAIS</span></h1>
-            <div class="links">
-                <div class="link-emp">
-                    <button><a href="cadempresas.php">Cadastra empresa</a></button>
-                    <button><a href="loginempresa.php">Login como empresa</a></button>
-
-                </div>
-                <div class="link-usu">
-                    <button><a href="cadastro.php">Cadastro Profissinal</a></button>
-                    <button><a href="logins.php">Login</a></button>
-                </div>
-            </div>
+            <h1>Sobre Nós</h1>
+            <p>
+                Bem-vindo(a) ao nosso site dedicado a solucionar o desemprego de profissionais
+                talentosos em busca de oportunidades. Aqui, você encontrará uma plataforma
+                dinâmica projetada para conectar você às melhores oportunidades de emprego em
+                sua área de atuação. Nosso objetivo é ser o seu guia confiável, fornecendo as
+                ferramentas e recursos necessários para encontrar um emprego. Explore agora e
+                descubra como podemos ajudá-lo(a) a avançar em sua carreira.
+            </p>
         </div>
 </body>
 

@@ -18,7 +18,7 @@ if (!isset($_SESSION['login'])) {
     }
 }
 
-$con = mysqli_connect('localhost', 'root', 'usbw', 'empregamais');
+$con = mysqli_connect('localhost', 'root', '', 'empregamais');
 
 if (isset($_POST['login'])) {
     $email = $_POST['email'];

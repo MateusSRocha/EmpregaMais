@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="public/assets/css/user/style.css">
+    <link rel="shortcut icon" href="public/assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="fundo">
         <header>
             <div class="logo">
-                <h1>EMPREGA<span>MAIS - CLIENTE</span></h1>
+                <img src="public/assets/images/botao-logo.png" alt="Logo da Empresa: E+">
             </div>
             <div class="cabecalho_link">
                 <li>

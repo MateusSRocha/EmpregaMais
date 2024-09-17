@@ -45,20 +45,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
+  padding: 1rem 5% 1rem 2%;
   background: var(--gradiente);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
-.logo h1 {
-  color: var(--branco);
-  font-size: 1.5rem;
-  font-weight: 200;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-.logo span {
-  color: var(--amarelo);
+.logo img {
+  width: 3.5rem;
 }
 
 .cabecalho_link {

@@ -43,19 +43,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
+  padding: 1rem 5% 1rem 2%;
   background: var(--gradiente);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.logo h1 {
-  color: var(--branco);
-  font-size: 1.5rem;
-  font-weight: 200;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-.logo span {
-  color: var(--amarelo);
+.logo img {
+  width: 3.5rem;
 }
 
 .cabecalho_link {
@@ -67,7 +61,7 @@ header {
   color: var(--branco);
   font-weight: 600;
   transition: color 0.3s ease, transform 0.3s ease;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
 
 .cabecalho_link a:hover {
@@ -95,13 +89,58 @@ header {
   font-weight: 700;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
+.meio span {
+    color: var(--amarelo);
+}
 
 .meio p {
   text-indent: 50px;
   font-size: 1.2rem;
   color: var(--preto);
-  line-height: 1.6;
+  line-height: 1.5;
   max-width: 800px;
   margin: 0 auto;
   text-align: justify;
+}
+
+.meio .links {
+  display: flex;
+  flex-direction: line;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  max-height: 400px;
+  padding: 0 5%;
+}
+
+.meio .links .link-emp, .meio .links .link-usu  {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin: 0;
+  padding: 10px 40px;
+}
+
+
+.meio .links button {
+  background-color: var(--roxo); 
+  color: var(--branco); 
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.meio .links button:hover {
+  background-color: var(--amarelo); 
+}
+
+.meio .links button a {
+  color: var(--branco); 
+  text-decoration: none;
 }

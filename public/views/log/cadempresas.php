@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Empresa</title>
     <link rel="stylesheet" href="public/assets/css/log/cadempresa.css">
+    <link rel="shortcut icon" href="public/assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="container">
