@@ -46,6 +46,7 @@ if (isset($_POST['cadastro'])) {
     $nome = $_POST['nome'];
     $telefone = $_POST['telefone'];
     $senha = $_POST['senha'];
+    $areaatuacao = $_POST['areaAtuacao'];
     $genero = $_POST['sexo'];
     $datacadastro = date('Y-m-d');
 
