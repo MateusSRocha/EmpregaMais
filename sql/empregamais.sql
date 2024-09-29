@@ -15,6 +15,7 @@ CREATE TABLE usuario (
 
 CREATE TABLE curriculo (
 	id INT NOT NULL AUTO_INCREMENT,
+    id_usuario INT NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     nome VARCHAR(200) NOT NULL,
     telefone VARCHAR(30) NOT NULL UNIQUE,
@@ -23,7 +24,8 @@ CREATE TABLE curriculo (
     endereco VARCHAR(50) NOT NULL,
     area VARCHAR(300) NOT NULL,
     temptrab VARCHAR(30) NOT NULL,
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id)
 );
 
 CREATE TABLE empresa (

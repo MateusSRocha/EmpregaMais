@@ -15,7 +15,7 @@
             </div>
             <div class="cabecalho_link">
                 <li>
-                    <a href="#">Cadastrar curriculo</a>
+                    <a href="cadastrar_curriculo.php">Cadastrar curriculo</a>
                 </li>
                 <li class="search-item">
                     <input type="text" name="procura" id="procura" placeholder="O que você procura?" oninput="opcoes(this.value)">
@@ -44,24 +44,33 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Empresa A</td>
-                            <td>Desenvolvedor</td>
-                            <td>6 anos</td>
-                            <td>Sup. Completo</td>
-                            <td></td>
-                            <td><button><i class="bi bi-search"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Empresa B</td>
-                            <td>Designer</td>
-                            <td>6 meses</td>
-                            <td>Médio Completo</td>
-                            <td>Ter trabalhado em equipes que usavam modelo espiral</td>
-                            <td><button><i class="bi bi-search"></i></button></td>
-                        </tr>
+                        <?php
+                        $con = mysqli_connect('localhost', 'root', '', 'empregamais');
+
+                        if (!$con) {
+                            die('Erro na conexão: ' . mysqli_connect_error());
+                        }
+                        $query = "SELECT vaga.*, empresa.nome AS nome_empresa
+                            FROM vaga
+                            INNER JOIN empresa ON vaga.id_empresa = empresa.id";
+                        $result = mysqli_query($con, $query);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($vaga = mysqli_fetch_assoc($result)) {
+                                echo '<tr>';
+                                echo '<td>' . $vaga['quantidade'] . '</td>'; 
+                                echo '<td>' . $vaga['nome_empresa'] . '</td>'; 
+                                echo '<td>' . $vaga['tipo_vaga'] . '</td>'; 
+                                echo '<td>' . $vaga['experiencia'] . '</td>'; 
+                                echo '<td>' . $vaga['nivel_escolaridade'] . '</td>';
+                                echo '<td>' . $vaga['detalhes'] . '</td>'; 
+                                echo '<td><button><i class="bi bi-search"></i></button></td>'; 
+                                echo '</tr>';
+                            }
+                        } else {
+                            echo '<tr><td colspan="7">Nenhuma vaga encontrada.</td></tr>';
+                        }
+                        mysqli_close($con);
+                        ?>
                     </tbody>
                 </table>
             </div>

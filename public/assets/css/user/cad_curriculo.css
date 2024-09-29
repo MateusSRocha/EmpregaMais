@@ -1,0 +1,182 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+:root {
+    --roxo: #8e2de2;
+    --rosa: #b55ba1;
+    --violeta: #a76b9f;
+    --amarelo: #ffd700;
+    --amarelo-claro: #ffea70;
+    --preto: #333333;
+    --cinza: #f3f3f3;
+    --branco: #ffffff;
+    --roxo-escuro: #6d1f7b;
+    --gradiente: linear-gradient(135deg, #8e2de2, #b55ba1);
+  }
+  
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--cinza);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: var(--preto);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+}
+
+.fundo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: var(--gradiente);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5% 1rem 2%;
+  background: var(--gradiente);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.logo img {
+  width: 3.5rem;
+}
+
+.cabecalho_link {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.cabecalho_link a {
+  margin-top: 8px;
+  color: var(--branco);
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.cabecalho_link a:hover {
+  color: var(--amarelo-claro);
+  transform: scale(1.1);
+}
+
+.cabecalho_link li button {
+  background-color: var(--roxo);
+  color: var(--branco);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.cabecalho_link li button:hover {
+  color: var(--amarelo-claro);
+}
+
+main {
+  padding: 2rem 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+  }
+  
+.form form {
+    width: 900px;
+    background: var(--branco);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.form-header h1 {
+    font-size: 1.5rem;
+    color: var(--roxo);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.botao-cad {
+    display: flex;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+.botao-cad button {
+    background-color: var(--roxo);
+    color: var(--branco);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.botao-cad button:hover {
+    background-color: var(--roxo-escuro);
+}
+
+.input-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.input-box {
+    margin-bottom: 0.5rem;
+}
+
+.input-box label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--preto);
+    margin-bottom: 0.3rem;
+}
+
+.input-box input,
+.input-box select {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.150);
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.input-box input:hover,
+.input-box select:hover {
+    background-color: var(--cinza);
+}
+
+.input-box select {
+    background-color: var(--branco);
+}

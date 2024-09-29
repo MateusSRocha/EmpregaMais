@@ -29,6 +29,7 @@ if (isset($_POST['login'])) {
         $result = mysqli_query($con, $analisa);
         if (mysqli_num_rows($result) > 0) {
             $_SESSION['login'] = true;
+            $_SESSION['usuario_id'] = $usuario['id']; 
             echo "<script>window.location.href = './'</script>";
         } else {
             echo "<script>alert('Email ou senha incorretos')</script>";
@@ -71,6 +72,7 @@ if (isset($_POST['cadastro'])) {
 
         mysqli_close($con);
         $_SESSION['login'] = true;
+        $_SESSION['usuario_id'] = $usuario['id']; 
         echo "<script>window.location.href = './'</script>";
     } else {
         echo 'Erro na conexão com o banco de dados: ' . mysqli_connect_error();
@@ -91,6 +93,7 @@ if (isset($_POST['cadEmpresa'])) {
         if ($result) {
             $_SESSION['login'] = true;
             $_SESSION['empresa'] = true;
+            $_SESSION['empresa_id'] = mysqli_insert_id($con);
             echo "<script>window.location.href = './'</script>";
         } else {
             echo 'Erro ao inserir dados: ' . mysqli_error($con);
