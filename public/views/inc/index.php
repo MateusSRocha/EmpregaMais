@@ -15,7 +15,7 @@
             </div>
             <div class="cabecalho_link">
                 <li>
-                    <a href="#">Cadastrar Vaga</a>
+                    <a href="cadastrar_vaga.php">Cadastrar Vaga</a>
                 </li>
                 <li>
                     <form method="POST">
@@ -58,3 +58,4 @@
         </main>
 </body>
 </html>
+

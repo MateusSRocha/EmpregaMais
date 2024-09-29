@@ -36,3 +36,16 @@ CREATE TABLE empresa (
     datacadastro DATE,
     PRIMARY KEY (id)
 );
+
+CREATE TABLE vaga (
+    id INT NOT NULL AUTO_INCREMENT,
+    id_empresa INT NOT NULL, 
+    quantidade INT NOT NULL,
+    tipo_vaga VARCHAR(100) NOT NULL,
+    experiencia int NOT NULL, 
+    nivel_escolaridade VARCHAR(100) NOT NULL,
+    detalhes TEXT NOT NULL,
+    data_publicacao DATE DEFAULT CURRENT_DATE,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_empresa) REFERENCES empresa(id)
+);

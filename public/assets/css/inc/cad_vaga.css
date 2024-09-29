@@ -100,64 +100,90 @@ main {
   
 }
 
-.curriculos-disponiveis {
-  background-color: var(--branco);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
+.form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+  }
+  
+.form form {
+    width: 700px;
+    background: var(--branco);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.form-header h1 {
+    font-size: 1.5rem;
+    color: var(--roxo);
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
-.curriculos-disponiveis h2 {
-  text-align: center;
-  color: var(--preto);
-  margin-bottom: 1rem;
-  font-weight: 600;
+.botao-cad {
+    display: flex;
+    margin-top: 1.5rem;
+    justify-content: center;
 }
 
-table.usuarios {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: var(--cinza);
-  border-radius: 8px;
-  overflow: hidden;
+.botao-cad button {
+    background-color: var(--roxo);
+    color: var(--branco);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
 }
 
-.usuarios th, .usuarios td {
-  padding: 12px 15px;
-  text-align: left;
+.botao-cad button:hover {
+    background-color: var(--roxo-escuro);
 }
 
-.usuarios th {
-  background-color: var(--roxo);
-  color: var(--branco);
-  font-weight: 600;
+.input-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
-.usuarios tr:nth-child(even) {
-  background-color: var(--cinza);
+.input-box {
+    margin-bottom: 1rem;
 }
 
-.usuarios tr:hover {
-  background-color: var(--violeta);
-  color: var(--branco);
+.input-box label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--preto);
+    margin-bottom: 0.3rem;
 }
 
-.usuarios td button {
-  background-color: var(--roxo-escuro);
-  color: var(--branco);
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.input-box input,
+.input-box select,
+.input-box textarea {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
-.usuarios td button:hover {
-  background-color: var(--roxo);
-  color: var(--amarelo-claro);
+.input-box input:hover,
+.input-box select:hover,
+.input-box textarea:hover {
+    background-color: var(--cinza);
 }
 
-.usuarios td i {
-  font-size: 1.2rem;
+.input-box select {
+    background-color: var(--branco);
 }
 
+.input-box textarea {
+    resize: none;
+    height: 100px;
+}

@@ -46,7 +46,6 @@ if (isset($_POST['cadastro'])) {
     $nome = $_POST['nome'];
     $telefone = $_POST['telefone'];
     $senha = $_POST['senha'];
-    $areaatuacao = $_POST['areaAtuacao'];
     $genero = $_POST['sexo'];
     $datacadastro = date('Y-m-d');
 
@@ -111,18 +110,19 @@ if (isset($_POST['loginEmpresa'])) {
         $analisa = "SELECT * FROM empresa WHERE cnpj='$cnpj' AND senha='$senha'";
         $result = mysqli_query($con, $analisa);
         if (mysqli_num_rows($result) > 0) {
+            $empresa = mysqli_fetch_assoc($result); 
             $_SESSION['login'] = true;
             $_SESSION['empresa'] = true;
-            echo "<script>window.location.href = './'</script>";
+            $_SESSION['empresa_id'] = $empresa['id']; 
+            echo "<script>window.location.href = './';</script>";
         } else {
-            echo "<script>alert('CNPJ ou senha incorretos')</script>";
-            echo "<script>window.location.href = './loginempresa.php'</script>";
+            echo "<script>alert('CNPJ ou senha incorretos');</script>";
+            echo "<script>window.location.href = './loginempresa.php';</script>";
         }
-
         mysqli_close($con);
     } else {
-        echo 'Erro na conexão com o banco : ';
-    }
+        echo 'Erro na conexão com o banco: ' . mysqli_connect_error();
+    }    
 }
 
 if (isset($_POST['sair'])) {
@@ -131,3 +131,31 @@ if (isset($_POST['sair'])) {
     echo "<script>window.location.href = './index.php'</script>";
     exit();
 }
+
+if (isset($_POST['cadVaga'])) {
+    if (isset($_SESSION['empresa_id'])) {
+        $id_empresa = $_SESSION['empresa_id']; 
+        $quantidade = mysqli_real_escape_string($con, $_POST['quantidade']);
+        $tipo_vaga = mysqli_real_escape_string($con, $_POST['tipo']);
+        $experiencia = mysqli_real_escape_string($con, $_POST['experiencia']);
+        $nivel_escolaridade = mysqli_real_escape_string($con, $_POST['nivel_escolar']);
+        $detalhes = mysqli_real_escape_string($con, $_POST['detalhe']);
+        $data_publicacao = date('Y-m-d');
+
+        if ($con) {
+            $query = "INSERT INTO vaga VALUES (NULL, '$id_empresa', '$quantidade', '$tipo_vaga', '$experiencia', '$nivel_escolaridade', '$detalhes', '$data_publicacao')";
+            $result = mysqli_query($con, $query);
+            if ($result) {
+                echo "<script>alert('Vaga cadastrada com sucesso!'); window.location.href = './';</script>";
+            } else {
+                echo 'Erro ao inserir dados: ' . mysqli_error($con); 
+            }
+            mysqli_close($con);
+        } else {
+            echo 'Erro na conexão com o banco de dados: ' . mysqli_connect_error();
+        }
+    } else {
+        echo "<script>alert('Você precisa estar logado como empresa para cadastrar uma vaga.');</script>";
+    }
+}
+

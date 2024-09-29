@@ -93,6 +93,7 @@ body {
   background: var(--branco);
   padding: 2rem;
   border-radius: 8px;
+  margin-top: 50px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -146,8 +147,7 @@ body {
 .input-box input[type="email"],
 .input-box input[type="date"],
 .input-box input[type="number"],
-.input-box input[type="password"], 
-.input-box select {
+.input-box input[type="password"] {
   width: 100%;
   padding: 0.8rem 1.2rem;
   border: none;
@@ -155,10 +155,6 @@ body {
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
   transition: background-color 0.3s ease;
-}
-
-input-box select {
-  width: 60%;
 }
 
 .input-box input[type="text"]:hover,
