@@ -193,3 +193,23 @@ table.vagasEmprego {
 .vagasEmprego td i {
   font-size: 1.2rem;
 }
+
+footer {
+  color: var(--branco);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+footer p span {
+  color: var(--amarelo);
+}

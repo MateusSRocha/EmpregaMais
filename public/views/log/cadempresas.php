@@ -46,10 +46,11 @@
                     </div>
                 </form>
             </div>
-            <a href="index.php" class="back-button">
+            <a href="empresa.php" class="back-button">
                 <ion-icon name="arrow-back-outline"></ion-icon> Voltar ao Início
             </a>
         </div>
     </div>
+    
 </body>
 </html>

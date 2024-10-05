@@ -1,16 +1,16 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 :root {
-    --roxo: #8e2de2;
-    --rosa: #b55ba1;
-    --violeta: #a76b9f;
-    --amarelo: #ffd700;
-    --amarelo-claro: #ffea70;
+    --verde-escuro: #2e8b57; 
+    --verde: #32cd32;
+    --verde-oliva: #6b8e23;
+    --verde-limao: #adff2f;
+    --verde-claro: #DAF7A6;
     --preto: #333333;
     --cinza: #f3f3f3;
     --branco: #ffffff;
-    --roxo-escuro: #6d1f7b;
-    --gradiente: linear-gradient(135deg, #8e2de2, #b55ba1);
+    --verde-musgo: #556b2f;
+    --gradiente: linear-gradient(135deg, #2e8b57, #32cd32); 
   }
   
 body {
@@ -72,12 +72,12 @@ header {
 }
 
 .cabecalho_link a:hover {
-  color: var(--amarelo-claro);
+  color: var(--verde-claro);
   transform: scale(1.1);
 }
 
 .cabecalho_link li button {
-  background-color: var(--roxo);
+  background-color: var(--verde-escuro);
   color: var(--branco);
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -89,7 +89,7 @@ header {
 }
 
 .cabecalho_link li button:hover {
-  color: var(--amarelo-claro);
+  color: var(--verde-claro);
 }
 
 main {
@@ -116,7 +116,7 @@ main {
 }
 .form-header h1 {
     font-size: 1.5rem;
-    color: var(--roxo);
+    color: var(--verde-escuro);
     margin-bottom: 1.5rem;
     text-align: center;
 }
@@ -128,7 +128,7 @@ main {
 }
 
 .botao-cad button {
-    background-color: var(--roxo);
+    background-color: var(--verde-escuro);
     color: var(--branco);
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -140,7 +140,7 @@ main {
 }
 
 .botao-cad button:hover {
-    background-color: var(--roxo-escuro);
+    background-color: var(--verde-musgo);
 }
 
 .input-group {
@@ -186,4 +186,8 @@ main {
 .input-box textarea {
     resize: none;
     height: 100px;
+}
+
+.input-box input:focus-visible {
+  outline: 1px solid var(--verde-escuro);
 }

@@ -21,10 +21,10 @@
                     <a href="index.php">Para Clientes</a>
                 </li>
                 <li>
-                    <a href="sobre.php">Sobre Nós</a>
+                    <a href="loginempresa.php">Login</a>
                 </li>
                 <li>
-                    <a href="cadastro.php">Cadastre-se</a>
+                    <a href="cadempresas.php">Cadastre-se</a>
                 </li>
             </div>
         </header>

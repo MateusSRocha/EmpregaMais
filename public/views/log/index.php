@@ -24,6 +24,9 @@
                     <a href="sobre.php">Sobre Nós</a>
                 </li>
                 <li>
+                    <a href="logins.php">Login Profissional</a>
+                </li>
+                <li>
                     <a href="cadastro.php">Cadastre-se</a>
                 </li>
             </div>

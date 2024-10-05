@@ -56,6 +56,22 @@
                 </table>
             </div>
         </main>
+        <footer>
+            <?php
+                if (isset($_COOKIE['ultima_visita_empresa'])) {
+                    $ultima_visita_empresa = $_COOKIE['ultima_visita_empresa'];
+                    echo "<p>Última visita da empresa: <span>$ultima_visita_empresa</span></p>";
+                } else {
+                    echo "<p>Bem-vindo! Esta é a primeira visita da sua empresa.</p>";
+                }
+
+                $nome_empresa = "ultima_visita_empresa";
+                $valor_empresa = date("Y-m-d H:i:s"); 
+                $expiracao_empresa = time() + (365 * 24 * 60 * 60); 
+                setcookie($nome_empresa, $valor_empresa, $expiracao_empresa, "/");
+            ?>
+        </footer>
+    </div>
 </body>
 </html>
 

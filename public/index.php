@@ -18,6 +18,12 @@ if (!isset($_SESSION['login'])) {
     }
 }
 
+$nome = "ultima_visita";
+$valor = date("Y-m-d H:i:s");
+$expiracao = time() + (365 * 86.400);
+setcookie($nome, $valor, $expiracao, "/");
+
+
 $con = mysqli_connect('localhost', 'root', '', 'empregamais');
 
 if (isset($_POST['login'])) {

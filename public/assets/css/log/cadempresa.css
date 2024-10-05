@@ -1,14 +1,15 @@
 :root {
-  --roxo: #8e2de2;
-  --rosa: #b55ba1;
-  --violeta: #a76b9f;
+  --verde-escuro: #2e8b57;
+  --verde: #32cd32;
+  --verde-oliva:  #6b8e23;
   --preto: #333333;
   --cinza: #f3f3f3;
   --branco: #ffffff;
-  --roxo-escuro: #6d1f7b;
-  --rosa-claro: #ffb6c1;
-  --rosa-escuro: #c87481;
+  --verde-musgo: #556b2f; 
+  
 }
+
+
 
 * {
   margin: 0;
@@ -41,7 +42,7 @@ body {
 
 .info {
   flex: 1;
-  background-color: var(--roxo);
+  background-color: var(--verde-escuro);
   color: var(--branco);
   padding: 2rem;
   display: flex;
@@ -72,7 +73,7 @@ body {
 }
 
 .back-button {
-  color: var(--roxo);
+  color: var(--verde-escuro);
   font-size: 1.2rem;
   text-decoration: none;
   display: flex;
@@ -87,7 +88,7 @@ body {
 }
 
 .back-button:hover {
-  color: var(--roxo-escuro);
+  color: var(--verde-musgo);
 }
 
 .form {
@@ -105,7 +106,7 @@ body {
 
 .form-header h1 {
   font-size: 1.5rem;
-  color: var(--roxo);
+  color: var(--verde-escuro);
   margin: 0;
 }
 
@@ -137,11 +138,11 @@ body {
 }
 
 .input-box input:focus-visible {
-  outline: 1px solid var(--violeta);
+  outline: 1px solid var(--verde-oliva);
 }
 
 .botao-enviar input[type="submit"] {
-  background-color: var(--roxo);
+  background-color: var(--verde-escuro);
   color: var(--branco);
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -153,5 +154,5 @@ body {
 }
 
 .botao-enviar input[type="submit"]:hover {
-  background-color: var(--roxo-escuro);
+  background-color: var(--verde-musgo);
 }

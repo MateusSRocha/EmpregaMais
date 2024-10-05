@@ -1,0 +1,154 @@
+:root {
+    --verde-escuro: #2e8b57;
+    --branco: #ffffff;
+    --cinza: #dfdfdf;
+    --verde-musgo: #556b2f;
+    --preto: #333333;
+    --gradiente: linear-gradient(135deg, #2e8b57, #32cd32); 
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cinza);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    display: flex;
+    height: 90vh;
+    width: 90vw;
+    max-width: 1200px;
+    background: var(--branco);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .info {
+    flex: 1;
+    background: var(--gradiente);
+    color: var(--branco);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /*.info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }*/
+  
+  .info img {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .form-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--cinza);
+    position: relative;
+  }
+  
+  .back-button {
+    color: var(--verde-escuro);
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    margin-top: 2rem;
+  }
+  
+  .back-button ion-icon {
+    margin-right: 0.5rem;
+  }
+  
+  .back-button:hover {
+    color: var(--verde-musgo);
+  }
+  
+  .form {
+    width: 100%;
+    max-width: 400px;
+    background: var(--branco);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 2rem;
+  }
+  
+  .form-header h1 {
+    font-size: 1.5rem;
+    color: var(--verde-escuro);
+    margin-bottom: 1.5rem;
+  }
+  
+  .botao-login button {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .botao-login button:hover {
+    background-color: var(--verde-musgo);
+  }
+  
+  .input-group {
+    width: 100%;
+  }
+  
+  .input-box {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .input-box label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--preto);
+    margin-bottom: 0.3rem;
+  }
+  
+  .input-box input {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .input-box input:hover {
+    background-color: var(--cinza);
+  }
+  
+  .input-box input:focus-visible {
+    outline: 1px solid var(--verde-escuro);
+  }
+  

@@ -1,16 +1,16 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 :root {
-    --roxo: #8e2de2;
-    --rosa: #b55ba1;
-    --violeta: #a76b9f;
-    --amarelo: #ffd700;
-    --amarelo-claro: #ffea70;
+    --verde-escuro: #2e8b57;
+    --verde: #32cd32;
+    --verde-oliva: #6b8e23;
+    --verde-limao: #adff2f;
+    --verde-claro: #DAF7A6;
     --preto: #333333;
     --cinza: #f3f3f3;
     --branco: #ffffff;
-    --roxo-escuro: #6d1f7b;
-    --gradiente: linear-gradient(135deg, #8e2de2, #b55ba1);
+    --verde-musgo: #556b2f;
+    --gradiente: linear-gradient(135deg, #2e8b57, #32cd32); 
   }
   
 body {
@@ -72,12 +72,12 @@ header {
 }
 
 .cabecalho_link a:hover {
-  color: var(--amarelo-claro);
+  color: var(--verde-claro);
   transform: scale(1.1);
 }
 
 .cabecalho_link li button {
-  background-color: var(--roxo);
+  background-color: var(--verde-escuro);
   color: var(--branco);
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -89,7 +89,7 @@ header {
 }
 
 .cabecalho_link li button:hover {
-  color: var(--amarelo-claro);
+  color: var(--verde-claro);
 }
 
 main {
@@ -129,7 +129,7 @@ table.usuarios {
 }
 
 .usuarios th {
-  background-color: var(--roxo);
+  background-color: var(--verde-escuro);
   color: var(--branco);
   font-weight: 600;
 }
@@ -139,12 +139,12 @@ table.usuarios {
 }
 
 .usuarios tr:hover {
-  background-color: var(--violeta);
+  background-color: var(--verde-oliva);
   color: var(--branco);
 }
 
 .usuarios td button {
-  background-color: var(--roxo-escuro);
+  background-color: var(--verde-musgo);
   color: var(--branco);
   padding: 5px 10px;
   border-radius: 5px;
@@ -153,11 +153,30 @@ table.usuarios {
 }
 
 .usuarios td button:hover {
-  background-color: var(--roxo);
-  color: var(--amarelo-claro);
+  background-color: var(--verde-escuro);
+  color: var(--verde-claro);
 }
 
 .usuarios td i {
   font-size: 1.2rem;
 }
 
+footer {
+  color: var(--branco);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+footer p span {
+  color: var(--verde-limao);
+}

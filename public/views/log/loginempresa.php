@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Login</title>
-    <link rel="stylesheet" href="public/assets/css/log/login.css">
+    <link rel="stylesheet" href="public/assets/css/log/loginempresa.css">
     <link rel="shortcut icon" href="public/assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -34,7 +34,7 @@
                     </div>
                 </form>
             </div>
-            <a href="index.php" class="back-button"><ion-icon name="arrow-back-outline"></ion-icon> Voltar ao Início</a>
+            <a href="empresa.php" class="back-button"><ion-icon name="arrow-back-outline"></ion-icon> Voltar ao Início</a>
         </div>
     </div>
 </body>

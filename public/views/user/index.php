@@ -75,7 +75,23 @@
                 </table>
             </div>
         </main>
+        <footer>
+            <?php
+            if (isset($_COOKIE['ultima_visita_cliente'])) {
+                $ultima_visita = $_COOKIE['ultima_visita_cliente'];
+                echo "<p>Sua última visita foi em: $ultima_visita</p>";
+            } else {
+                
+                echo "<p>Bem-vindo! Esta é sua primeira visita.</p>";
+            }
 
-        <script src="public/assets/js/script.js"></script>
+            $nome = "ultima_visita_cliente";
+            $valor = date("Y-m-d H:i:s"); 
+            $expiracao = time() + (365 * 24 * 60 * 60); 
+            setcookie($nome, $valor, $expiracao, "/");
+            ?>
+        </footer>
+    </div>
+    <script src="public/assets/js/script.js"></script>
 </body>
 </html>
