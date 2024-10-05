@@ -24,7 +24,7 @@
 
         <main>
             <div class="form">
-                <form action="#" method="POST">
+                <form action="" method="POST">
                     <div class="input-group">
                         <div class="input-box">
                             <label for="email">Email</label>

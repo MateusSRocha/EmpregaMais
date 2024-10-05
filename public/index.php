@@ -24,7 +24,7 @@ $expiracao = time() + (365 * 86.400);
 setcookie($nome, $valor, $expiracao, "/");
 
 
-$con = mysqli_connect('localhost', 'root', '', 'empregamais');
+$con = mysqli_connect('localhost', 'root', 'usbw', 'empregamais');
 
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
@@ -168,3 +168,27 @@ if (isset($_POST['cadVaga'])) {
     }
 }
 
+if (isset($_POST['cadCurriculo'])) {
+    $email = $_POST['email'];
+    $nome = $_POST['nome'];
+    $telefone = $_POST['telefone'];
+    $datanasc = $_POST['datanasc'];
+    $genero = $_POST['genero'];
+    $endereco = $_POST['endereco'];
+    $area = $_POST['area'];
+    $temptrab = $_POST['temptrab'];
+
+    if ($con) {
+        $query = "INSERT INTO curriculo VALUES (NULL, '$email', '$nome', '$telefone', '$datanasc', '$genero', '$endereco', '$area', '$temptrab')";
+
+        $result = mysqli_query($con, $query);
+        if ($result) {
+            echo "<script>alert('Curriculo cadastrado com sucesso!'); window.location.href = './';</script>";
+        } else {
+            echo 'Erro ao inserir dados: ' . mysqli_error($con); 
+        }
+        mysqli_close($con);
+    } else {
+        echo 'Erro na conexão com o banco de dados: ' . mysqli_connect_error();
+    }
+}
