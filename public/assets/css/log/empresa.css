@@ -1,14 +1,14 @@
 :root {
-  --roxo: #8e2de2;
-  --rosa: #b55ba1;
-  --violeta: #a76b9f;
-  --amarelo: #ffd700;
-  --amarelo-claro: #ffea70;
-  --preto: #333333;
+  --verde-escuro: #2e8b57; 
+  --verde: #32cd32; 
+  --verde-oliva: #6b8e23;
+  --verde-limao: #adff2f; 
+  --verde-claro: #DAF7A6; 
+  --preto: #333333; 
   --cinza: #dfdfdf; 
-  --branco: #ffffff;
-  --roxo-escuro: #6d1f7b;
-  --gradiente: linear-gradient(135deg, #8e2de2, #b55ba1);
+  --branco: #ffffff; 
+  --verde-musgo: #556b2f; 
+  --gradiente: linear-gradient(135deg, #2e8b57, #32cd32); 
 }
 
 body {
@@ -65,7 +65,7 @@ header {
 }
 
 .cabecalho_link a:hover {
-  color: var(--amarelo-claro);
+  color: var(--verde-claro);
   transform: scale(1.1);
 }
 
@@ -91,12 +91,12 @@ main {
 .meio h1 {
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  color: var(--roxo);
+  color: var(--verde-escuro);
   font-weight: 700;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 .meio span {
-    color: var(--amarelo);
+    color: var(--verde-limao);
 }
 
 .meio p {
@@ -129,7 +129,7 @@ main {
 
 
 .meio .links button {
-  background-color: var(--roxo); 
+  background-color: var(--verde-escuro); 
   color: var(--branco); 
   font-weight: 600;
   font-size: 1.5rem;
@@ -143,7 +143,7 @@ main {
 }
 
 .meio .links button:hover {
-  background-color: var(--amarelo); 
+  background-color: var(--verde-limao); 
 }
 
 .meio .links button a {
@@ -161,7 +161,7 @@ main {
 
 .meio .barra-pesquisa input[type="text"] {
   padding: 10px;
-  border: 3px solid var(--roxo);
+  border: 3px solid var(--verde-escuro);
   border-radius: 50px 0 0 50px;
   font-size: 1.5rem;
   outline: none;
@@ -169,13 +169,13 @@ main {
 }
 
 .meio .barra-pesquisa input[type="text"]:focus {
-  border: 2px solid var(--rosa);
+  border: 2px solid var(--verde);
 }
 
 .meio .barra-pesquisa button {
-  background-color: var(--roxo);
+  background-color: var(--verde-escuro);
   color: var(--branco);
-  border: 3px solid var(--roxo);
+  border: 3px solid var(--verde-escuro);
   border-radius: 0 30px 30px 0;
   padding: 12px 20px;
   cursor: pointer;
@@ -187,7 +187,7 @@ main {
 }
 
 .meio .barra-pesquisa button:hover {
-  color: var(--amarelo);
+  color: var(--verde-limao);
 }
 
 .empresas-recrutando {
@@ -219,7 +219,7 @@ table.vagasEmprego {
 }
 
 .vagasEmprego th {
-  background-color: var(--roxo);
+  background-color: var(--verde-escuro);
   color: var(--branco);
   font-weight: 600;
 }
@@ -229,12 +229,12 @@ table.vagasEmprego {
 }
 
 .vagasEmprego tr:hover {
-  background-color: var(--violeta);
+  background-color: var(--verde-oliva);
   color: var(--branco);
 }
 
 .vagasEmprego td button {
-  background-color: var(--roxo);
+  background-color: var(--verde-escuro);
   color: var(--branco);
   padding: 5px 10px;
   border-radius: 5px;
@@ -243,7 +243,7 @@ table.vagasEmprego {
 }
 
 .vagasEmprego td button:hover {
-  background-color: var(--roxo);
+  background-color: var(--verde-escuro);
 }
 
 .vagasEmprego td i {
@@ -255,3 +255,4 @@ main h2 {
   color: var(--branco);
   font-size: 2rem;
 }
+

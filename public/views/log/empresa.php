@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="public/assets/css/log/style.css">
+    <link rel="stylesheet" href="public/assets/css/log/empresa.css">
     <link rel="shortcut icon" href="public/assets/images/favicon.ico" type="image/x-icon">
 </head>
 
@@ -18,7 +18,7 @@
             </div>
             <div class="cabecalho_link">
                 <li>
-                    <a href="empresa.php">Para Empresas</a>
+                    <a href="index.php">Para Clientes</a>
                 </li>
                 <li>
                     <a href="sobre.php">Sobre Nós</a>

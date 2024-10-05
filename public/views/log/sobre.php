@@ -31,6 +31,9 @@
                 ferramentas e recursos necessários para encontrar um emprego. Explore agora e
                 descubra como podemos ajudá-lo(a) a avançar em sua carreira.
             </p>
+            <p>   
+                O EmpregaMais é a ferramenta ideal para aproximação entre empresas e Trabalhadores. Conosco a empresa poderá recrutar profissionais de qualidade a fim de melhorar sua instituição.
+            </p>
         </div>
 </body>
 
