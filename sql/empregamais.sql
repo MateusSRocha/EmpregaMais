@@ -48,7 +48,7 @@ CREATE TABLE vaga (
     experiencia INT NOT NULL, 
     nivel_escolaridade VARCHAR(100) NOT NULL,
     detalhes TEXT NOT NULL,
-    data_publicacao DATE DEFAULT CURRENT_DATE,
+    data_publicacao DATE,
     PRIMARY KEY (id),
     FOREIGN KEY (id_empresa) REFERENCES empresa(id)
 );
