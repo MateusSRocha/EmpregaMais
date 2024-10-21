@@ -14,6 +14,7 @@ CREATE TABLE usuario (
 );
 CREATE TABLE curriculo (
     id INT NOT NULL AUTO_INCREMENT,
+    id_usuario INT NOT NULL,
     endereco VARCHAR(50) NOT NULL,
     area VARCHAR(300) NOT NULL,
     temptrab VARCHAR(30) NOT NULL,
@@ -25,7 +26,7 @@ CREATE TABLE curriculo (
     cursos TEXT, 
     linkedin VARCHAR(255), 
     PRIMARY KEY (id),
-    FOREIGN KEY (id_usuario) REFERENCES usuario(id) ON DELETE CASCADE
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id)
 );
 
 CREATE TABLE empresa (
@@ -49,5 +50,5 @@ CREATE TABLE vaga (
     detalhes TEXT NOT NULL,
     data_publicacao DATE DEFAULT CURRENT_DATE,
     PRIMARY KEY (id),
-    FOREIGN KEY (id_empresa) REFERENCES empresa(id) ON DELETE CASCADE
+    FOREIGN KEY (id_empresa) REFERENCES empresa(id)
 );
