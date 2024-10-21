@@ -1,5 +1,5 @@
 <?php
-    $con = mysqli_connect('localhost', 'root', '', 'empregamais');
+    $con = mysqli_connect('localhost', 'root', 'usbw', 'empregamais');
     $query = "
         SELECT u.nome, u.telefone, c.area, c.temptrab
         FROM usuario u

@@ -20,7 +20,7 @@ if (!isset($_SESSION['login'])) {
 
 setcookie("ultima_visita", date("Y-m-d H:i:s"), time() + (365 * 86.400), "/");
 
-$con = mysqli_connect('localhost', 'root', '', 'empregamais');
+$con = mysqli_connect('localhost', 'root', 'usbw', 'empregamais');
 
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
