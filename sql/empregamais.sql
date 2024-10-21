@@ -2,7 +2,6 @@ CREATE SCHEMA empregamais;
 
 USE empregamais;
 
--- Tabela de usuários
 CREATE TABLE usuario (
     id INT NOT NULL AUTO_INCREMENT,
     email VARCHAR(100) NOT NULL UNIQUE,
@@ -13,11 +12,8 @@ CREATE TABLE usuario (
     datacadastro DATE,
     PRIMARY KEY (id)
 );
-
--- Tabela de currículos simplificada
 CREATE TABLE curriculo (
     id INT NOT NULL AUTO_INCREMENT,
-    id_usuario INT NOT NULL, -- Referência ao usuário
     endereco VARCHAR(50) NOT NULL,
     area VARCHAR(300) NOT NULL,
     temptrab VARCHAR(30) NOT NULL,
@@ -32,7 +28,6 @@ CREATE TABLE curriculo (
     FOREIGN KEY (id_usuario) REFERENCES usuario(id) ON DELETE CASCADE
 );
 
--- Tabela de empresas
 CREATE TABLE empresa (
     id INT NOT NULL AUTO_INCREMENT,
     cnpj VARCHAR(50) NOT NULL UNIQUE,
@@ -44,7 +39,6 @@ CREATE TABLE empresa (
     PRIMARY KEY (id)
 );
 
--- Tabela de vagas
 CREATE TABLE vaga (
     id INT NOT NULL AUTO_INCREMENT,
     id_empresa INT NOT NULL, 
