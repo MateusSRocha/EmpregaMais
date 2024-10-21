@@ -110,20 +110,18 @@ main {
 .form form {
     width: 900px;
     background: var(--branco);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-.form-header h1 {
-    font-size: 1.5rem;
-    color: var(--roxo);
-    margin-bottom: 1.5rem;
+ h1 {
+    color: var(--branco);
     text-align: center;
 }
 
 .botao-cad {
     display: flex;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     justify-content: center;
 }
 
@@ -150,7 +148,7 @@ main {
 }
 
 .input-box {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
 .input-box label {
@@ -161,8 +159,7 @@ main {
     margin-bottom: 0.3rem;
 }
 
-.input-box input,
-.input-box select {
+.input-box input, .input-box textarea  {
     width: 100%;
     padding: 0.8rem 1.2rem;
     border: none;
@@ -173,10 +170,11 @@ main {
 }
 
 .input-box input:hover,
-.input-box select:hover {
+.input-box textarea:hover {
     background-color: var(--cinza);
 }
 
-.input-box select {
-    background-color: var(--branco);
+.input-box input:focus-visible,
+.input-box textarea:focus-visible {
+    outline: 1px solid var(--roxo);
 }

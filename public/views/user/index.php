@@ -12,8 +12,19 @@
         <header>
             <div class="logo">
                 <img src="public/assets/images/botao-logo.png" alt="Logo da Empresa: E+">
+                <div>
+                <?php 
+                    if (isset($_SESSION['nome_usuario'])) {
+                        echo '<h1>Olá, '. $_SESSION['nome_usuario']. '</h1>';
+                    } else {
+                        echo '<h1>Olá, visitante</h1>';
+                    }
+                ?>
             </div>
+            </div>
+            
             <div class="cabecalho_link">
+                
                 <li>
                     <a href="cadastrar_curriculo.php">Cadastrar curriculo</a>
                 </li>

@@ -6,9 +6,6 @@
     <link rel="shortcut icon" href="public/assets/images/favicon.ico" type="image/x-icon">
     <title>Cadastrar Currículo</title>
     <link rel="stylesheet" href="public/assets/css/user/cad_curriculo.css">
-    <style>
-        
-    </style>
 </head>
 <body>
     <div class="fundo">
@@ -16,6 +13,7 @@
             <div class="logo">
                 <img src="public/assets/images/botao-logo.png" alt="Logo da Empresa: E+">
             </div>
+            <h1>Cadastrar currículo</h1>
             <div class="cabecalho_link">
                 <li><a href="index.php">Home</a></li>
                 <li><form method="POST"><button type="submit" name="sair">Sair</button></form></li>
@@ -26,43 +24,50 @@
             <div class="form">
                 <form action="" method="POST">
                     <div class="input-group">
-                        <div class="input-box">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" required>
-                        </div>
-                        
-                        <div class="input-box">
-                            <label for="nome">Nome</label>
-                            <input type="text" name="nome" required>
-                        </div>
-                        
-                        <div class="input-box">
-                            <label for="telefone">Telefone</label>
-                            <input type="text" name="telefone" required>
-                        </div>
-                        <div class="input-box">
-                            <label for="datanasc">Data de Nascimento</label>
-                            <input type="date" name="datanasc" required>
-                        </div>
-                        <div class="input-box">
-                            <label for="genero">Gênero</label>
-                            <select name="genero" required>
-                                <option value="M">Masculino</option>
-                                <option value="F">Feminino</option>
-                                <option value="O">Outro</option>
-                            </select>
-                        </div>
-                        <div class="input-box">
-                            <label for="endereco">Endereço</label>
-                            <input type="text" name="endereco" required>
-                        </div>
-                        <div class="input-box">
+                            <div class="input-box">
                             <label for="area">Área de Atuação</label>
                             <input type="text" name="area" required>
                         </div>
                         <div class="input-box">
                             <label for="temptrab">Tempo de Trabalho</label>
                             <input type="text" name="temptrab" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="objetivo">Objetivo Profissional</label>
+                            <textarea name="objetivo" required></textarea>
+                        </div>
+                        
+                        <div class="input-box">
+                            <label for="formacao">Formação Acadêmica</label>
+                            <textarea name="formacao" required></textarea>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="experiencia">Experiência Profissional</label>
+                            <textarea name="experiencia" required></textarea>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="habilidades">Habilidades</label>
+                            <textarea name="habilidades" required></textarea>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="idiomas">Idiomas</label>
+                            <input type="text" name="idiomas">
+                        </div>
+
+                        <div class="input-box">
+                            <label for="cursos">Cursos e Certificações</label>
+                            <textarea name="cursos"></textarea>
+                        </div>
+                        <div class="input-box">
+                            <label for="endereco">Endereço</label>
+                            <input type="text" name="endereco" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="linkedin">LinkedIn (opcional)</label>
+                            <input type="url" name="linkedin" placeholder="https://linkedin.com/in/usuario">
                         </div>
                     </div>
 

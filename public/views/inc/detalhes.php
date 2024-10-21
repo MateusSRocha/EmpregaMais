@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fale com usuario</title>
-    <link rel="shortcut icon" href="public/assets/images/favicon.ico" type="image/x-icon">
+    <title>Detalhes</title>
 </head>
 <body>
-    <h1>Página fechada</h1>
+    <h1>Detalhes do usuário</h1>
 </body>
 </html>

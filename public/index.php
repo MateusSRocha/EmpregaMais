@@ -18,13 +18,9 @@ if (!isset($_SESSION['login'])) {
     }
 }
 
-$nome = "ultima_visita";
-$valor = date("Y-m-d H:i:s");
-$expiracao = time() + (365 * 86.400);
-setcookie($nome, $valor, $expiracao, "/");
+setcookie("ultima_visita", date("Y-m-d H:i:s"), time() + (365 * 86.400), "/");
 
-
-$con = mysqli_connect('localhost', 'root', 'usbw', 'empregamais');
+$con = mysqli_connect('localhost', 'root', '', 'empregamais');
 
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
@@ -34,8 +30,10 @@ if (isset($_POST['login'])) {
         $analisa = "SELECT * FROM usuario WHERE email='$email' AND senha='$senha'";
         $result = mysqli_query($con, $analisa);
         if (mysqli_num_rows($result) > 0) {
+            $usuario = mysqli_fetch_assoc($result);
             $_SESSION['login'] = true;
             $_SESSION['email_usuario'] = $email; 
+            $_SESSION['nome_usuario'] = $usuario['nome']; 
             echo "<script>window.location.href = './'</script>";
         } else {
             echo "<script>alert('Email ou senha incorretos')</script>";
@@ -50,7 +48,7 @@ if (isset($_POST['login'])) {
 
 if (isset($_POST['cadastro'])) {
     $email = $_POST['email'];
-    $nome = $_POST['nome'];
+    $nome_usu = $_POST['nome'];
     $telefone = $_POST['telefone'];
     $senha = $_POST['senha'];
     $genero = $_POST['sexo'];
@@ -73,12 +71,13 @@ if (isset($_POST['cadastro'])) {
             die();
         }
 
-        $query = "INSERT INTO usuario VALUES (NULL, '$email', '$nome', '$telefone','$senha', '$genero','$datacadastro')";
+        $query = "INSERT INTO usuario VALUES (NULL, '$email', '$nome_usu', '$telefone','$senha', '$genero','$datacadastro')";
         $result = mysqli_query($con, $query);
 
         mysqli_close($con);
         $_SESSION['login'] = true;
         $_SESSION['email_usuario'] = $email; 
+        $_SESSION['nome_usuario'] = $nome_usu; 
         echo "<script>window.location.href = './'</script>";
     } else {
         echo 'Erro na conexão com o banco de dados: ' . mysqli_connect_error();
@@ -89,17 +88,18 @@ if (isset($_POST['cadEmpresa'])) {
     $cnpj = $_POST['cnpj'];
     $senha = $_POST['senha'];
     $endereco = $_POST['endereco'];
-    $nome = $_POST['nome'];
+    $nome_emp = $_POST['nome'];
     $telefone = $_POST['telefone'];
     $datacadastro = date('Y-m-d');
 
     if ($con) {
-        $query = "INSERT INTO empresa  VALUES (NULL, '$cnpj', '$senha', '$endereco', '$nome', '$telefone','$datacadastro')";
+        $query = "INSERT INTO empresa  VALUES (NULL, '$cnpj', '$senha', '$endereco', '$nome_emp', '$telefone','$datacadastro')";
         $result = mysqli_query($con, $query);
         if ($result) {
             $_SESSION['login'] = true;
             $_SESSION['empresa'] = true;
             $_SESSION['empresa_id'] = mysqli_insert_id($con);
+            $_SESSION['nome_empresa'] = $nome_emp;
             echo "<script>window.location.href = './'</script>";
         } else {
             echo 'Erro ao inserir dados: ' . mysqli_error($con);
@@ -122,7 +122,8 @@ if (isset($_POST['loginEmpresa'])) {
             $empresa = mysqli_fetch_assoc($result); 
             $_SESSION['login'] = true;
             $_SESSION['empresa'] = true;
-            $_SESSION['empresa_id'] = $empresa['id']; 
+            $_SESSION['empresa_id'] = $empresa['id'];
+            $_SESSION['nome_empresa'] = $empresa['nome'];
             echo "<script>window.location.href = './';</script>";
         } else {
             echo "<script>alert('CNPJ ou senha incorretos');</script>";
@@ -170,27 +171,38 @@ if (isset($_POST['cadVaga'])) {
 
 if (isset($_POST['cadCurriculo'])) {
     $email_usuario = $_SESSION['email_usuario'];
-    $usuario_id = mysqli_fetch_all(mysqli_query($con, "SELECT id FROM usuario WHERE email='$email_usuario' LIMIT 1"))[0][0];
-    $email = $_POST['email'];
-    $nome = $_POST['nome'];
-    $telefone = $_POST['telefone'];
-    $datanasc = $_POST['datanasc'];
-    $genero = $_POST['genero'];
-    $endereco = $_POST['endereco'];
-    $area = $_POST['area'];
-    $temptrab = $_POST['temptrab'];
 
-    if ($con) {
-        $query = "INSERT INTO curriculo VALUES (NULL, '$usuario_id', '$email', '$nome', '$telefone', '$datanasc', '$genero', '$endereco', '$area', '$temptrab')";
+    $query_usuario = "SELECT id FROM usuario WHERE email='$email_usuario' LIMIT 1";
+    $result_usuario = mysqli_query($con, $query_usuario);
+    
+    if ($result_usuario && mysqli_num_rows($result_usuario) > 0) {
+        $usuario_id = mysqli_fetch_assoc($result_usuario)['id'];
 
-        $result = mysqli_query($con, $query);
-        if ($result) {
-            echo "<script>alert('Curriculo cadastrado com sucesso!'); window.location.href = './';</script>";
+        $endereco = $_POST['endereco'];
+        $area = $_POST['area'];
+        $temptrab = $_POST['temptrab'];
+        $objetivo = $_POST['objetivo'];
+        $formacao = $_POST['formacao'];
+        $experiencia = $_POST['experiencia'];
+        $habilidades = $_POST['habilidades'];
+        $idiomas = $_POST['idiomas'];
+        $cursos = $_POST['cursos'];
+        $linkedin = $_POST['linkedin'];
+
+        if ($con) {
+            $query = "INSERT INTO curriculo VALUES (NULL,'$usuario_id', '$endereco', '$area', '$temptrab', '$objetivo', '$formacao', '$experiencia', '$habilidades', '$idiomas', '$cursos', '$linkedin')";
+
+            $result = mysqli_query($con, $query);
+            if ($result) {
+                echo "<script>alert('Currículo cadastrado com sucesso!'); window.location.href = './';</script>";
+            } else {
+                echo 'Erro ao inserir dados: ' . mysqli_error($con);
+            }
+            mysqli_close($con);
         } else {
-            echo 'Erro ao inserir dados: ' . mysqli_error($con); 
+            echo 'Erro na conexão com o banco de dados: ' . mysqli_connect_error();
         }
-        mysqli_close($con);
     } else {
-        echo 'Erro na conexão com o banco de dados: ' . mysqli_connect_error();
+        echo 'Usuário não encontrado.';
     }
 }

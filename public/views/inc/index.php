@@ -1,9 +1,11 @@
 <?php
-
-$con = mysqli_connect('localhost', 'root', '', 'empregamais');
-
-$curriculos = mysqli_fetch_all(mysqli_query($con, "SELECT * FROM curriculo"));
-
+    $con = mysqli_connect('localhost', 'root', '', 'empregamais');
+    $query = "
+        SELECT u.nome, u.telefone, c.area, c.temptrab
+        FROM usuario u
+        JOIN curriculo c ON u.id = c.id_usuario
+    ";
+    $curriculos = mysqli_query($con, $query);
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +24,15 @@ $curriculos = mysqli_fetch_all(mysqli_query($con, "SELECT * FROM curriculo"));
         <header>
             <div class="logo">
                 <img src="public/assets/images/botao-logo.png" alt="Logo da Empresa: E+">
+                <div>
+                <?php 
+                    if (isset($_SESSION['nome_empresa'])) {
+                        echo '<h1>Olá, '. $_SESSION['nome_empresa']. '</h1>';
+                    } else {
+                        echo '<h1>Olá, visitante</h1>';
+                    }
+                ?>
+                </div>
             </div>
             <div class="cabecalho_link">
                 <li>
@@ -49,13 +60,13 @@ $curriculos = mysqli_fetch_all(mysqli_query($con, "SELECT * FROM curriculo"));
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($curriculos as $curriculo) {
+                        while ($curriculo = mysqli_fetch_assoc($curriculos)) {
                         ?>
                                 <tr>
-                                    <td><?= $curriculo[3]?></td>
-                                    <td><?= $curriculo[8]?></td>
-                                    <td><?= $curriculo[9]?></td>
-                                    <td><?= $curriculo[4]?></td>
+                                    <td><?= $curriculo['nome'] ?></td>
+                                    <td><?= $curriculo['area'] ?></td>
+                                    <td><?= $curriculo['temptrab'] ?></td>
+                                    <td><?= $curriculo['telefone'] ?></td>
                                     <td><button><i class="bi bi-search"></i></button></td>
                                 </tr>
                         <?php
@@ -68,16 +79,12 @@ $curriculos = mysqli_fetch_all(mysqli_query($con, "SELECT * FROM curriculo"));
         <footer>
             <?php
             if (isset($_COOKIE['ultima_visita_empresa'])) {
-                $ultima_visita_empresa = $_COOKIE['ultima_visita_empresa'];
-                echo "<p>Última visita da empresa: <span>$ultima_visita_empresa</span></p>";
+                echo "<p>Última visita da empresa: <span>{$_COOKIE['ultima_visita_empresa']}</span></p>";
             } else {
                 echo "<p>Bem-vindo! Esta é a primeira visita da sua empresa.</p>";
             }
 
-            $nome_empresa = "ultima_visita_empresa";
-            $valor_empresa = date("Y-m-d H:i:s");
-            $expiracao_empresa = time() + (365 * 24 * 60 * 60);
-            setcookie($nome_empresa, $valor_empresa, $expiracao_empresa, "/");
+            setcookie("ultima_visita_empresa", date("Y-m-d H:i:s"), time() + (365 * 24 * 60 * 60), "/");
             ?>
         </footer>
     </div>
