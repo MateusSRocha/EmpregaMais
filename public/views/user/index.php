@@ -56,7 +56,7 @@
                     </thead>
                     <tbody>
                         <?php
-                        $con = mysqli_connect('localhost', 'root', 'usbw', 'empregamais');
+                        $con = mysqli_connect('localhost', 'root', '', 'empregamais');
 
                         if (!$con) {
                             die('Erro na conexão: ' . mysqli_connect_error());
@@ -74,7 +74,14 @@
                                 echo '<td>' . $vaga['experiencia'] . '</td>'; 
                                 echo '<td>' . $vaga['nivel_escolaridade'] . '</td>';
                                 echo '<td>' . $vaga['detalhes'] . '</td>'; 
-                                echo '<td><button><i class="bi bi-search"></i></button></td>'; 
+                                echo '<td>';
+                                    echo '<form action="enviar_curriculo.php" method="POST">';
+                                    echo     "<input type='hidden' name='id' value='" . htmlspecialchars($vaga['id_empresa']) . "'>";
+                                    echo     '<button type="submit">';
+                                    echo         '<i class="bi bi-search"></i>';
+                                    echo     '</button>';
+                                   echo  '</form>';
+                                    echo '</td>'; 
                                 echo '</tr>';
                             }
                         } else {

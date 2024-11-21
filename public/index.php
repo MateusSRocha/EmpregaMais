@@ -20,7 +20,7 @@ if (!isset($_SESSION['login'])) {
 
 setcookie("ultima_visita", date("Y-m-d H:i:s"), time() + (365 * 86.400), "/");
 
-$con = mysqli_connect('localhost', 'root', 'usbw', 'empregamais');
+$con = mysqli_connect('localhost', 'root', '', 'empregamais');
 
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
@@ -180,17 +180,15 @@ if (isset($_POST['cadCurriculo'])) {
 
         $endereco = $_POST['endereco'];
         $area = $_POST['area'];
-        $temptrab = $_POST['temptrab'];
         $objetivo = $_POST['objetivo'];
         $formacao = $_POST['formacao'];
         $experiencia = $_POST['experiencia'];
         $habilidades = $_POST['habilidades'];
         $idiomas = $_POST['idiomas'];
-        $cursos = $_POST['cursos'];
         $linkedin = $_POST['linkedin'];
 
         if ($con) {
-            $query = "INSERT INTO curriculo VALUES (NULL,'$usuario_id', '$endereco', '$area', '$temptrab', '$objetivo', '$formacao', '$experiencia', '$habilidades', '$idiomas', '$cursos', '$linkedin')";
+            $query = "INSERT INTO curriculo VALUES (NULL,'$usuario_id', '$endereco', '$area', '$objetivo', '$formacao', '$experiencia', '$habilidades', '$idiomas', '$linkedin')";
 
             $result = mysqli_query($con, $query);
             if ($result) {

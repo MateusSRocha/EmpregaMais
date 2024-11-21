@@ -24,13 +24,9 @@
             <div class="form">
                 <form action="" method="POST">
                     <div class="input-group">
-                            <div class="input-box">
+                        <div class="input-box">
                             <label for="area">Área de Atuação</label>
                             <input type="text" name="area" required>
-                        </div>
-                        <div class="input-box">
-                            <label for="temptrab">Tempo de Trabalho</label>
-                            <input type="text" name="temptrab" required>
                         </div>
                         <div class="input-box">
                             <label for="objetivo">Objetivo Profissional</label>
@@ -55,11 +51,6 @@
                         <div class="input-box">
                             <label for="idiomas">Idiomas</label>
                             <input type="text" name="idiomas">
-                        </div>
-
-                        <div class="input-box">
-                            <label for="cursos">Cursos e Certificações</label>
-                            <textarea name="cursos"></textarea>
                         </div>
                         <div class="input-box">
                             <label for="endereco">Endereço</label>

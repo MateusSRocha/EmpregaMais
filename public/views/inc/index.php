@@ -1,11 +1,20 @@
 <?php
-    $con = mysqli_connect('localhost', 'root', 'usbw', 'empregamais');
-    $query = "
-        SELECT u.nome, u.telefone, c.area, c.temptrab
-        FROM usuario u
-        JOIN curriculo c ON u.id = c.id_usuario
-    ";
-    $curriculos = mysqli_query($con, $query);
+
+$con = mysqli_connect('localhost', 'root', '', 'empregamais');
+if (!$con) {
+    die("Erro na conexão com o banco de dados: " . mysqli_connect_error());
+}
+
+$query = "
+    SELECT u.nome, u.telefone, c.area, c.experiencia, c.id_usuario
+    FROM usuario u
+    JOIN curriculo c ON u.id = c.id_usuario
+";
+$curriculos = mysqli_query($con, $query);
+
+if (!$curriculos) {
+    die("Erro na consulta SQL: " . mysqli_error($con));
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +23,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Início</title>
     <link rel="stylesheet" href="public/assets/css/inc/style.css">
     <link rel="shortcut icon" href="public/assets/images/favicon.ico" type="image/x-icon">
 </head>
@@ -25,24 +34,24 @@
             <div class="logo">
                 <img src="public/assets/images/botao-logo.png" alt="Logo da Empresa: E+">
                 <div>
-                <?php 
+                    <?php 
                     if (isset($_SESSION['nome_empresa'])) {
-                        echo '<h1>Olá, '. $_SESSION['nome_empresa']. '</h1>';
+                        echo '<h1>Olá, ' . htmlspecialchars($_SESSION['nome_empresa']) . '</h1>';
                     } else {
                         echo '<h1>Olá, visitante</h1>';
                     }
-                ?>
+                    ?>
                 </div>
             </div>
             <div class="cabecalho_link">
-                <li>
-                    <a href="cadastrar_vaga.php">Cadastrar Vaga</a>
-                </li>
-                <li>
-                    <form method="POST">
-                        <button type="submit" name="sair">Sair</button>
-                    </form>
-                </li>
+                    <li>
+                        <a href="cadastrar_vaga.php">Cadastrar Vaga</a>
+                    </li>
+                    <li>
+                        <form method="POST">
+                            <button type="submit" name="sair">Sair</button>
+                        </form>
+                    </li>
             </div>
         </header>
         <main>
@@ -59,19 +68,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-                        while ($curriculo = mysqli_fetch_assoc($curriculos)) {
-                        ?>
-                                <tr>
-                                    <td><?= $curriculo['nome'] ?></td>
-                                    <td><?= $curriculo['area'] ?></td>
-                                    <td><?= $curriculo['temptrab'] ?></td>
-                                    <td><?= $curriculo['telefone'] ?></td>
-                                    <td><button><i class="bi bi-search"></i></button></td>
-                                </tr>
-                        <?php
-                        }
-                        ?>
+                        <?php while ($curriculo = mysqli_fetch_assoc($curriculos)) : ?>
+                            <tr>
+                                <td><?= htmlspecialchars($curriculo['nome']) ?></td>
+                                <td><?= htmlspecialchars($curriculo['area']) ?></td>
+                                <td><?= htmlspecialchars($curriculo['experiencia']) ?></td>
+                                <td><?= htmlspecialchars($curriculo['telefone']) ?></td>
+                                <td>
+                                    <form action="detalhes.php" method="POST">
+                                        <input type="hidden" name="id" value="<?= htmlspecialchars($curriculo['id_usuario']) ?>">
+                                        <button type="submit">
+                                            <i class="bi bi-search"></i>
+                                        </button>
+                                    </form>
+                                </td>
+
+
+                            </tr>
+                        <?php endwhile; ?>
                     </tbody>
                 </table>
             </div>
@@ -79,7 +93,7 @@
         <footer>
             <?php
             if (isset($_COOKIE['ultima_visita_empresa'])) {
-                echo "<p>Última visita da empresa: <span>{$_COOKIE['ultima_visita_empresa']}</span></p>";
+                echo "<p>Última visita da empresa: <span>" . htmlspecialchars($_COOKIE['ultima_visita_empresa']) . "</span></p>";
             } else {
                 echo "<p>Bem-vindo! Esta é a primeira visita da sua empresa.</p>";
             }

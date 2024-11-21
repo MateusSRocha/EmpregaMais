@@ -17,13 +17,11 @@ CREATE TABLE curriculo (
     id_usuario INT NOT NULL,
     endereco VARCHAR(50) NOT NULL,
     area VARCHAR(300) NOT NULL,
-    temptrab VARCHAR(30) NOT NULL,
     objetivo TEXT NOT NULL, 
     formacao TEXT NOT NULL, 
     experiencia TEXT NOT NULL, 
     habilidades TEXT NOT NULL,
     idiomas VARCHAR(200),
-    cursos TEXT, 
     linkedin VARCHAR(255), 
     PRIMARY KEY (id),
     FOREIGN KEY (id_usuario) REFERENCES usuario(id)
