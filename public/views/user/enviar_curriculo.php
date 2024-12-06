@@ -30,6 +30,23 @@ if (isset($_POST['id'])) {
 } else {
     die('ID da vaga não fornecido.');
 }
+
+// Verifica se o usuário está logado e se está se candidatando
+if (isset($_POST['candidatar'])) {
+    if (isset($_SESSION['id_usuario'])) {
+        $id_usuario = $_SESSION['id_usuario'];
+        
+        // Inserir candidatura no banco de dados
+        $query_candidatura = "INSERT INTO candidatura (id_usuario, id_vaga) VALUES ('$id_usuario', '$id_vaga')";
+        if (mysqli_query($con, $query_candidatura)) {
+            echo '<script>alert("Candidatura realizada com sucesso!");</script>';
+        } else {
+            echo '<script>alert("Erro ao realizar candidatura: ' . mysqli_error($con) . '");</script>';
+        }
+    } else {
+        echo '<script>alert("Você precisa estar logado para se candidatar.");</script>';
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -76,6 +93,11 @@ if (isset($_POST['id'])) {
                             <p><strong>Localização:</strong> <?php echo htmlspecialchars($vaga['localizacao_empresa']); ?></p>
                         </div>
                         </div>
+                        <!-- Formulário de candidatura -->
+                        <form action="" method="POST">
+                            <input type="hidden" name="id" value="<?php echo $id_vaga; ?>">
+                            <button type="submit" name="candidatar">Candidatar-se</button>
+                        </form>
                     <?php } else { ?>
                         <p>Detalhes não disponíveis para a vaga selecionada.</p>
                     <?php } ?>
@@ -90,6 +112,5 @@ if (isset($_POST['id'])) {
 </html>
 
 <?php
-// Fechar a conexão com o banco de dados
 mysqli_close($con);
 ?>

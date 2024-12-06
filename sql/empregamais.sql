@@ -50,3 +50,13 @@ CREATE TABLE vaga (
     PRIMARY KEY (id),
     FOREIGN KEY (id_empresa) REFERENCES empresa(id)
 );
+
+CREATE TABLE candidatura (
+    id INT AUTO_INCREMENT PRIMARY KEY, 
+    id_usuario INT NOT NULL,          
+    id_vaga INT NOT NULL,              
+    data_candidatura TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  
+    status ENUM('pendente', 'confirmada', 'rejeitada') DEFAULT 'pendente', 
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id), 
+    FOREIGN KEY (id_vaga) REFERENCES vaga(id)        
+);
