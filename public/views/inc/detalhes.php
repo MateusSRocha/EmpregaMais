@@ -85,6 +85,9 @@
         }
         ?>
     </div>
+    <div>
+        <a href="falar_com_usuário.php">Contatar</a>
+    </div>
     <footer>
         <p>&copy; 2024 EmpregaMais - Todos os direitos reservados.</p>
     </footer>
