@@ -64,7 +64,13 @@
                     echo "<p><strong>Experiência:</strong> " . htmlspecialchars($usuario['experiencia']) . "</p>";
                     echo "<p><strong>Habilidades:</strong> " . htmlspecialchars($usuario['habilidades']) . "</p>";
                     echo "<p><strong>Idiomas:</strong> " . htmlspecialchars($usuario['idiomas']) . "</p>";
+                    
+                    if ($usuario['linkedin'] != null) {
                     echo "<p><strong>LinkedIn:</strong> <a href='" . htmlspecialchars($usuario['linkedin']) . "' target='_blank'>Perfil</a></p>";
+                    } else {
+                    echo "<p style='color:red;'>LinkedIn não informado.</p>";
+                    }
+    
                 } else {
                     echo "<p>Este usuário ainda não possui currículo cadastrado.</p>";
                 }
