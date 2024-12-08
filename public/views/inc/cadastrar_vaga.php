@@ -15,7 +15,6 @@
             </div>
             <div class="cabecalho_link">
                 <li><a href="index.php">Home</a></li>
-                <li><form method="POST"><button type="submit" name="sair">Sair</button></form></li>
             </div>
         </header>
 

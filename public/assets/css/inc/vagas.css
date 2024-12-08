@@ -1,0 +1,128 @@
+/* Estilos para a página de lista de candidatos */
+:root {
+    --verde-escuro: #2e8b57;
+    --verde: #32cd32;
+    --verde-claro: #DAF7A6;
+    --preto: #333333;
+    --cinza-claro: #f3f3f3;
+    --branco: #ffffff;
+    --gradiente: linear-gradient(135deg, #2e8b57, #32cd32);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cinza-claro);
+    margin: 0;
+    padding: 0;
+    color: var(--preto);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5% 1rem 2%;
+    background: var(--gradiente);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .logo img {
+    width: 3.5rem;
+  }
+  
+  .cabecalho_link {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .cabecalho_link a {
+    margin-top: 8px;
+    color: var(--branco);
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+  
+  .cabecalho_link a:hover {
+    color: var(--verde-claro);
+    transform: scale(1.1);
+  }
+  
+  .cabecalho_link li button {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .cabecalho_link li button:hover {
+    color: var(--verde-claro);
+  }
+
+main {
+    padding: 2rem 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.vagas-lista {
+    background-color: var(--branco);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.vagas-lista h2 {
+    font-size: 1.8rem;
+    color: var(--preto);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.vaga-item {
+    background-color: var(--cinza-claro);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.vaga-item h3 {
+    font-size: 1.5rem;
+    color: var(--verde-escuro);
+    margin-bottom: 0.5rem;
+}
+
+.vaga-item p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.vaga-item a {
+    font-size: 1.1rem;
+    color: var(--verde-escuro);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.vaga-item a:hover {
+    color: var(--verde-claro);
+}

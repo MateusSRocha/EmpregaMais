@@ -13,18 +13,17 @@
             <div class="logo">
                 <img src="public/assets/images/botao-logo.png" alt="Logo da Empresa: E+">
                 <div>
-                <?php 
-                    if (isset($_SESSION['nome_usuario'])) {
-                        echo '<h1>Olá, '. $_SESSION['nome_usuario']. '</h1>';
-                    } else {
-                        echo '<h1>Olá, visitante</h1>';
-                    }
-                ?>
-            </div>
+                    <?php 
+                        if (isset($_SESSION['nome_usuario'])) {
+                            echo '<h1>Olá, '. $_SESSION['nome_usuario']. '</h1>';
+                        } else {
+                            echo '<h1>Olá, visitante</h1>';
+                        }
+                    ?>
+                </div>
             </div>
             
             <div class="cabecalho_link">
-                
                 <li>
                     <a href="cadastrar_curriculo.php">Cadastrar curriculo</a>
                 </li>
@@ -76,7 +75,7 @@
                                 echo '<td>' . $vaga['detalhes'] . '</td>'; 
                                 echo '<td>';
                                     echo '<form action="enviar_curriculo.php" method="POST">';
-                                    echo     "<input type='hidden' name='id' value='" . htmlspecialchars($vaga['id_empresa']) . "'>";
+                                    echo     "<input type='hidden' name='id_vaga' value='" . htmlspecialchars($vaga['id']) . "'>";
                                     echo     '<button type="submit">';
                                     echo         '<i class="bi bi-search"></i>';
                                     echo     '</button>';
@@ -99,7 +98,6 @@
                 $ultima_visita = $_COOKIE['ultima_visita_cliente'];
                 echo "<p>Sua última visita foi em: $ultima_visita</p>";
             } else {
-                
                 echo "<p>Bem-vindo! Esta é sua primeira visita.</p>";
             }
 

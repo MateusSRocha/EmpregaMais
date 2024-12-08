@@ -5,23 +5,19 @@ if (!$con) {
     die('Erro na conexão: ' . mysqli_connect_error());
 }
 
-// Verifica se o ID foi passado pelo formulário
-if (isset($_POST['id'])) {
-    $id_vaga = $_POST['id'];
+if (isset($_POST['id_vaga'])) {
+    $id_vaga = $_POST['id_vaga'];
 
-    // Consulta para buscar os detalhes da vaga e da empresa
     $query = "SELECT vaga.*, empresa.nome AS nome_empresa, empresa.endereco AS localizacao_empresa, empresa.telefone AS telefone_empresa
               FROM vaga
               INNER JOIN empresa ON vaga.id_empresa = empresa.id
               WHERE vaga.id = $id_vaga";
     $result = mysqli_query($con, $query);
 
-    // Verifica se a consulta foi bem-sucedida
     if (!$result) {
-        die('Erro na consulta SQL: ' . mysqli_error($con)); // Exibe o erro da consulta
+        die('Erro na consulta SQL: ' . mysqli_error($con)); 
     }
 
-    // Verifica se a consulta retornou resultados
     if (mysqli_num_rows($result) > 0) {
         $vaga = mysqli_fetch_assoc($result);
     } else {
@@ -31,17 +27,22 @@ if (isset($_POST['id'])) {
     die('ID da vaga não fornecido.');
 }
 
-// Verifica se o usuário está logado e se está se candidatando
 if (isset($_POST['candidatar'])) {
     if (isset($_SESSION['id_usuario'])) {
         $id_usuario = $_SESSION['id_usuario'];
-        
-        // Inserir candidatura no banco de dados
-        $query_candidatura = "INSERT INTO candidatura (id_usuario, id_vaga) VALUES ('$id_usuario', '$id_vaga')";
-        if (mysqli_query($con, $query_candidatura)) {
-            echo '<script>alert("Candidatura realizada com sucesso!");</script>';
+
+        $query_verifica_candidatura = "SELECT * FROM candidatura WHERE id_usuario = '$id_usuario' AND id_vaga = '$id_vaga'";
+        $result_verifica = mysqli_query($con, $query_verifica_candidatura);
+
+        if (mysqli_num_rows($result_verifica) > 0) {
+            echo '<script>alert("Você já está cadastrado para esta vaga.");</script>';
         } else {
-            echo '<script>alert("Erro ao realizar candidatura: ' . mysqli_error($con) . '");</script>';
+            $query_candidatura = "INSERT INTO candidatura (id_usuario, id_vaga) VALUES ('$id_usuario', '$id_vaga')";
+            if (mysqli_query($con, $query_candidatura)) {
+                echo '<script>alert("Candidatura realizada com sucesso!");</script>';
+            } else {
+                echo '<script>alert("Erro ao realizar candidatura: ' . mysqli_error($con) . '");</script>';
+            }
         }
     } else {
         echo '<script>alert("Você precisa estar logado para se candidatar.");</script>';
@@ -95,7 +96,7 @@ if (isset($_POST['candidatar'])) {
                         </div>
                         <!-- Formulário de candidatura -->
                         <form action="" method="POST">
-                            <input type="hidden" name="id" value="<?php echo $id_vaga; ?>">
+                            <input type="hidden" name="id_vaga" value="<?php echo $id_vaga; ?>">
                             <button type="submit" name="candidatar">Candidatar-se</button>
                         </form>
                     <?php } else { ?>

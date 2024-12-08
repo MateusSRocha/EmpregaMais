@@ -60,3 +60,15 @@ CREATE TABLE candidatura (
     FOREIGN KEY (id_usuario) REFERENCES usuario(id), 
     FOREIGN KEY (id_vaga) REFERENCES vaga(id)        
 );
+
+CREATE TABLE entrevistas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_empresa INT NOT NULL,
+    id_usuario INT NOT NULL,
+    id_vaga INT NOT NULL,
+    data_entrevista DATE NOT NULL,
+    status VARCHAR(20) DEFAULT 'Aguardando Resposta',
+    FOREIGN KEY (id_empresa) REFERENCES empresa(id),
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id),
+    FOREIGN KEY (id_vaga) REFERENCES vaga(id)
+); 
