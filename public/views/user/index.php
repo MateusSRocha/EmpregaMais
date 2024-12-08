@@ -27,6 +27,7 @@
                 <li>
                     <a href="cadastrar_curriculo.php">Cadastrar curriculo</a>
                 </li>
+                <li><a href="chamados.php">Chamados</a></li>
                 <li class="search-item">
                     <input type="text" name="procura" id="procura" placeholder="O que você procura?" oninput="opcoesEmpresas(this.value)">
                     <button onclick="procuraEmpresas()"><i class="bi bi-search"></i></button>

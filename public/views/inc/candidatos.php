@@ -46,6 +46,7 @@ if (isset($_POST['id_vaga'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidatos para a Vaga</title>
     <link rel="stylesheet" href="public/assets/css/inc/candidatos.css">
+    <link rel="shortcut icon" href="public/assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>

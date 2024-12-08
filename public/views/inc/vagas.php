@@ -34,6 +34,7 @@ if (!$result_vagas) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Candidatos</title>
     <link rel="stylesheet" href="public/assets/css/inc/vagas.css">
+    <link rel="shortcut icon" href="public/assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
