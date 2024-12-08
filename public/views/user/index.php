@@ -28,8 +28,11 @@
                     <a href="cadastrar_curriculo.php">Cadastrar curriculo</a>
                 </li>
                 <li class="search-item">
-                    <input type="text" name="procura" id="procura" placeholder="O que você procura?" oninput="opcoes(this.value)">
-                    <button onclick="procura()"><i class="bi bi-search"></i></button>
+                    <input type="text" name="procura" id="procura" placeholder="O que você procura?" oninput="opcoesEmpresas(this.value)">
+                    <button onclick="procuraEmpresas()"><i class="bi bi-search"></i></button>
+                    <div class="search-item-result">
+
+                    </div>
                 </li>
                 <li>
                     <form method="POST">

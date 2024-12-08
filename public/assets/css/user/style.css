@@ -74,6 +74,7 @@ header h1 {
   justify-content: space-between;
   padding: 5px;
   border-radius: 20px;
+  position: relative;
 }
 
 .search-item input[type="text"] {
@@ -83,6 +84,28 @@ header h1 {
   border-radius: 5px;
   font-size: 16px;
   outline: none;
+}
+
+.search-item-result {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  background-color: #f3f3f3;
+}
+
+.search-item-result a.link_pes {
+  color: #333333;
+  margin: 8px 12px;
+  display: flex;
+  justify-content: left;
+}
+
+.search-item-result a.link_pes:hover {
+  color: #6d1f7b;
+  transform: scale(1);
 }
 
 .search-item button {
