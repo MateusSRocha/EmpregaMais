@@ -12,6 +12,30 @@ if (!isset($_SESSION['empresa_id'])) {
 
 $id_empresa = $_SESSION['empresa_id']; 
 
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $id_usuario = $_POST['id_usuario'] ?? null;
+                $id_vaga = $_POST['id_vaga'] ?? null;
+                $data_entrevista = $_POST['data_entrevista'] ?? null;
+
+                if (strtotime($data_entrevista) < strtotime(date('Y-m-d'))) {
+                    echo "<p>A data da entrevista deve ser uma data futura.</p>";
+                } else {
+                    $id_usuario = mysqli_real_escape_string($con, $id_usuario);
+                    $id_vaga = mysqli_real_escape_string($con, $id_vaga);
+                    $data_entrevista = mysqli_real_escape_string($con, $data_entrevista);
+
+                    // Insere a solicitação de entrevista no banco
+                    $query = "INSERT INTO entrevistas (id_empresa, id_usuario, id_vaga, data_entrevista, status) 
+                            VALUES ('$id_empresa', '$id_usuario', '$id_vaga', '$data_entrevista', 'Aguardando Resposta')";
+
+                        if (mysqli_query($con, $query)) {
+                            echo "<p style='color:green;'>Solicitação de entrevista enviada com sucesso!</p>";
+                        } else {
+                            echo "<p style='color:red;'>Erro ao enviar a solicitação: " . mysqli_error($con) . "</p>";
+                        }
+                    }
+                }
+
 ?>
 
 <!DOCTYPE html>
@@ -173,33 +197,6 @@ p {
         <label for="data_entrevista">Data da Entrevista:</label>
         <input type="date" name="data_entrevista" required>
         <button type="submit">Enviar Solicitação</button>
-
-        <?php 
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $id_usuario = $_POST['id_usuario'] ?? null;
-                $id_vaga = $_POST['id_vaga'] ?? null;
-                $data_entrevista = $_POST['data_entrevista'] ?? null;
-
-                if (strtotime($data_entrevista) < strtotime(date('Y-m-d'))) {
-                    echo "<p>A data da entrevista deve ser uma data futura.</p>";
-                } else {
-                    $id_usuario = mysqli_real_escape_string($con, $id_usuario);
-                    $id_vaga = mysqli_real_escape_string($con, $id_vaga);
-                    $data_entrevista = mysqli_real_escape_string($con, $data_entrevista);
-
-                    // Insere a solicitação de entrevista no banco
-                    $query = "INSERT INTO entrevistas (id_empresa, id_usuario, id_vaga, data_entrevista, status) 
-                            VALUES ('$id_empresa', '$id_usuario', '$id_vaga', '$data_entrevista', 'Aguardando Resposta')";
-
-                        if (mysqli_query($con, $query)) {
-                            echo "<p style='color:green;'>Solicitação de entrevista enviada com sucesso!</p>";
-                        } else {
-                            echo "<p style='color:red;'>Erro ao enviar a solicitação: " . mysqli_error($con) . "</p>";
-                        }
-                    }
-                }
-
-        ?>
     </form>
 </main>
 </body>

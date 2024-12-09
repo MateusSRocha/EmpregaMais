@@ -15,7 +15,7 @@
   
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--cinza);
+  background: var(--gradiente);
   margin: 0;
   padding: 0;
   display: flex;
@@ -104,46 +104,62 @@ main {
     
   }
 
-/* Tabela */
-table {
+  .chamados {
+    background-color: var(--branco);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  
+  .chamados h2 {
+    text-align: center;
+    color: var(--preto);
+    margin: 1rem;
+    font-weight: 600;
+  }
+  
+  table.table-chamados {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-table th, table td {
-    padding: 12px;
+    background-color: var(--cinza);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .table-chamados th, .table-chamados td {
+    padding: 12px 15px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-table th {
-    background-color: #333;
-    color: white;
-    font-weight: bold;
-}
-
-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-table tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Estilos para quando não houver dados */
-p {
-    text-align: center;
-    font-size: 16px;
-    color: #666;
-}
-
-/* Estilos específicos para o cabeçalho das seções */
-h2 {
-    font-size: 22px;
-    color: #333;
-    margin-bottom: 15px;
-    padding-left: 20px;
-}
+  }
+  
+  .table-chamados th {
+    background-color: var(--roxo);
+    color: var(--branco);
+    font-weight: 600;
+  }
+  
+  .table-chamados tr:nth-child(even) {
+    background-color: var(--cinza);
+  }
+  
+  .table-chamados tr:hover {
+    background-color: var(--violeta);
+    color: var(--branco);
+  }
+  
+  .table-chamados td button {
+    background-color: var(--roxo);
+    color: var(--branco);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .table-chamados td button:hover {
+    background-color: var(--roxo);
+  }
+  
+  .table-chamados td i {
+    font-size: 1.2rem;
+  }

@@ -71,55 +71,60 @@ if ($result_entrevistas === false) {
         </div>
     </header>
     <main>
-        <h2>Vagas às quais você se candidatou</h2>
-        <?php if (mysqli_num_rows($result_candidaturas) > 0): ?>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Título</th>
-                        <th>Descrição</th>
-                        <th>Empresa</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($vaga = mysqli_fetch_assoc($result_candidaturas)): ?>
-                        <tr>
-                            <td><?php echo htmlspecialchars($vaga['titulo']); ?></td>
-                            <td><?php echo htmlspecialchars($vaga['descricao']); ?></td>
-                            <td><?php echo htmlspecialchars($vaga['empresa_nome']); ?></td>
-                        </tr>
-                    <?php endwhile; ?>
-                </tbody>
-            </table>
-        <?php else: ?>
-            <p>Você ainda não se candidatou a nenhuma vaga.</p>
-        <?php endif; ?>
-
-        <h2>Vagas nas quais você foi chamado para entrevista</h2>
-        <?php if (mysqli_num_rows($result_entrevistas) > 0): ?>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Título</th>
-                        <th>Descrição</th>
-                        <th>Empresa</th>
-                        <th>Data da Entrevista</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($vaga = mysqli_fetch_assoc($result_entrevistas)): ?>
-                        <tr>
-                            <td><?php echo htmlspecialchars($vaga['titulo']); ?></td>
-                            <td><?php echo htmlspecialchars($vaga['descricao']); ?></td>
-                            <td><?php echo htmlspecialchars($vaga['empresa_nome']); ?></td>
-                            <td><?php echo htmlspecialchars(date('d/m/Y', strtotime($vaga['data_entrevista']))); ?></td>
-                        </tr>
-                    <?php endwhile; ?>
-                </tbody>
-            </table>
-        <?php else: ?>
-            <p>Você ainda não foi chamado para nenhuma entrevista.</p>
-        <?php endif; ?>
+        <div class="chamados">
+            <h2>Vagas às quais você se candidatou</h2>
+            <?php
+            if (mysqli_num_rows($result_candidaturas) > 0):
+                echo "<table class='table-chamados'>";
+                echo '<thead>';
+                echo '<tr>';
+                echo '<th>Título</th>';
+                echo '<th>Descrição</th>';
+                echo '<th>Empresa</th>';
+                echo '</tr>';
+                echo '</thead>';
+                echo '<tbody>';
+                while ($vaga = mysqli_fetch_assoc($result_candidaturas)):
+                    echo '<tr>';
+                    echo '<td>' . htmlspecialchars($vaga['titulo']) . '</td>';
+                    echo '<td>' . htmlspecialchars($vaga['descricao']) . '</td>';
+                    echo '<td>' . htmlspecialchars($vaga['empresa_nome']) . '</td>';
+                    echo '</tr>';
+                endwhile;
+                echo '</tbody>';
+                echo '</table>';
+            else:
+                echo '<p>Você ainda não se candidatou a nenhuma vaga.</p>';
+            endif;
+            ?>
+            <h2>Vagas nas quais você foi chamado para entrevista</h2>
+            <?php
+            if (mysqli_num_rows($result_entrevistas) > 0):
+                echo "<table class='table-chamados'>";
+                echo '<thead>';
+                echo '<tr>';
+                echo '<th>Título</th>';
+                echo '<th>Descrição</th>';
+                echo '<th>Empresa</th>';
+                echo '<th>Data da Entrevista</th>';
+                echo '</tr>';
+                echo '</thead>';
+                echo '<tbody>';
+                while ($vaga = mysqli_fetch_assoc($result_entrevistas)):
+                    echo '<tr>';
+                    echo '<td>' . htmlspecialchars($vaga['titulo']) . '</td>';
+                    echo '<td>' . htmlspecialchars($vaga['descricao']) . '</td>';
+                    echo '<td>' . htmlspecialchars($vaga['empresa_nome']) . '</td>';
+                    echo '<td>' . htmlspecialchars(date('d/m/Y', strtotime($vaga['data_entrevista']))) . '</td>';
+                    echo '</tr>';
+                endwhile;
+                echo '</tbody>';
+                echo '</table>';
+            else:
+                echo '<p>Você ainda não foi chamado para nenhuma entrevista.</p>';
+            endif;
+            ?>
+        </div>
     </main>
 </body>
 </html>

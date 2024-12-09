@@ -187,7 +187,7 @@ if (isset($_POST['cadCurriculo'])) {
 
     $query_usuario = "SELECT id FROM usuario WHERE email='$email_usuario' LIMIT 1";
     $result_usuario = mysqli_query($con, $query_usuario);
-    
+
     if ($result_usuario && mysqli_num_rows($result_usuario) > 0) {
         $usuario_id = mysqli_fetch_assoc($result_usuario)['id'];
 
@@ -200,18 +200,37 @@ if (isset($_POST['cadCurriculo'])) {
         $idiomas = $_POST['idiomas'];
         $linkedin = $_POST['linkedin'];
 
-        if ($con) {
-            $query = "INSERT INTO curriculo VALUES (NULL,'$usuario_id', '$endereco', '$area', '$objetivo', '$formacao', '$experiencia', '$habilidades', '$idiomas', '$linkedin')";
+        $query_curriculo = "SELECT * FROM curriculo WHERE id_usuario = '$usuario_id' LIMIT 1";
+        $result_curriculo = mysqli_query($con, $query_curriculo);
 
-            $result = mysqli_query($con, $query);
-            if ($result) {
+        if ($result_curriculo && mysqli_num_rows($result_curriculo) > 0) {
+            $update_query = "UPDATE curriculo SET 
+                endereco = '$endereco',
+                area = '$area',
+                objetivo = '$objetivo',
+                formacao = '$formacao',
+                experiencia = '$experiencia',
+                habilidades = '$habilidades',
+                idiomas = '$idiomas',
+                linkedin = '$linkedin'
+                WHERE id_usuario = '$usuario_id'";
+
+            $result_update = mysqli_query($con, $update_query);
+            if ($result_update) {
+                echo "<script>alert('Currículo atualizado com sucesso!'); window.location.href = './';</script>";
+            } else {
+                echo 'Erro ao atualizar currículo: ' . mysqli_error($con);
+            }
+        } else {
+            $insert_query = "INSERT INTO curriculo (id_usuario, endereco, area, objetivo, formacao, experiencia, habilidades, idiomas, linkedin)
+                             VALUES ('$usuario_id', '$endereco', '$area', '$objetivo', '$formacao', '$experiencia', '$habilidades', '$idiomas', '$linkedin')";
+
+            $result_insert = mysqli_query($con, $insert_query);
+            if ($result_insert) {
                 echo "<script>alert('Currículo cadastrado com sucesso!'); window.location.href = './';</script>";
             } else {
-                echo 'Erro ao inserir dados: ' . mysqli_error($con);
+                echo 'Erro ao cadastrar currículo: ' . mysqli_error($con);
             }
-            mysqli_close($con);
-        } else {
-            echo 'Erro na conexão com o banco de dados: ' . mysqli_connect_error();
         }
     } else {
         echo 'Usuário não encontrado.';
