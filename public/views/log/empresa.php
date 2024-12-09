@@ -28,29 +28,11 @@
                 </li>
             </div>
         </header>
-        <!-- <div class="meio">
-            <h1>EMPREGA<span>MAIS</span></h1>
-            <div class="links">
-                <div class="link-emp">
-                    <button><a href="cadempresas.php">Cadastra empresa</a></button>
-                    <button><a href="loginempresa.php">Login como empresa</a></button>
-
-                </div>
-                <div class="link-usu">
-                    <button><a href="cadastro.php">Cadastro Profissinal</a></button>
-                    <button><a href="logins.php">Login</a></button>
-                </div>
-            </div>
-        </div> -->
         <main>
             <div class="meio">
                 <h1>EMPREGA<span>MAIS</span></h1>
-                <form action="" method="post" class="barra-pesquisa">
-                    <input type="text" name="Informacao" id="idinformacao" placeholder="Digite um cargo ou uma localização">
-                    <button><i class="bi bi-search"></i></button>
-                </form>
             </div>
-            <h2>Veja algumas oportunidades de trabalho</h2>
+            <h2>Veja alguns Candidatos</h2>
             <div class="empresas-recrutando">
                 <table class="vagasEmprego">
                     <thead>

@@ -34,7 +34,7 @@ if (isset($_POST['login'])) {
             $usuario = mysqli_fetch_assoc($result);
             $_SESSION['login'] = true;
             $_SESSION['email_usuario'] = $email;
-            $_SESSION['id_usuario'] = $usuario['id'];  // Armazena o ID do usuário
+            $_SESSION['id_usuario'] = $usuario['id'];  
             $_SESSION['nome_usuario'] = $usuario['nome'];
             echo "<script>window.location.href = './'</script>";
         } else {
@@ -57,7 +57,6 @@ if (isset($_POST['cadastro'])) {
     $datacadastro = date('Y-m-d');
 
     if ($con) {
-        // Verifica se o email já está cadastrado
         $query = "SELECT * FROM usuario WHERE email = '$email'";
         $result = mysqli_query($con, $query);
         if (mysqli_num_rows($result) > 0) {
@@ -66,7 +65,6 @@ if (isset($_POST['cadastro'])) {
             die();
         }
 
-        // Verifica se o telefone já está cadastrado
         $query = "SELECT * FROM usuario WHERE telefone = '$telefone'";
         $result = mysqli_query($con, $query);
         if (mysqli_num_rows($result) > 0) {
@@ -75,17 +73,14 @@ if (isset($_POST['cadastro'])) {
             die();
         }
 
-        // Insere o usuário no banco
         $query = "INSERT INTO usuario VALUES (NULL, '$email', '$nome_usu', '$telefone','$senha', '$genero','$datacadastro')";
         $result = mysqli_query($con, $query);
 
-        // Recupera o ID do usuário após a inserção
         $usuario_id = mysqli_insert_id($con);
 
-        // Armazena o ID do usuário na sessão
         $_SESSION['login'] = true;
         $_SESSION['email_usuario'] = $email;
-        $_SESSION['id_usuario'] = $usuario_id;  // Armazena o ID
+        $_SESSION['id_usuario'] = $usuario_id; 
         $_SESSION['nome_usuario'] = $nome_usu;
         echo "<script>window.location.href = './'</script>";
         mysqli_close($con);
@@ -109,7 +104,7 @@ if (isset($_POST['cadEmpresa'])) {
         if ($result) {
             $_SESSION['login'] = true;
             $_SESSION['empresa'] = true;
-            $_SESSION['empresa_id'] = mysqli_insert_id($con);  // Armazena o ID da empresa
+            $_SESSION['empresa_id'] = mysqli_insert_id($con);  
             $_SESSION['nome_empresa'] = $nome_emp;
             echo "<script>window.location.href = './'</script>";
         } else {
@@ -133,7 +128,7 @@ if (isset($_POST['loginEmpresa'])) {
             $empresa = mysqli_fetch_assoc($result);
             $_SESSION['login'] = true;
             $_SESSION['empresa'] = true;
-            $_SESSION['empresa_id'] = $empresa['id'];  // Armazena o ID da empresa
+            $_SESSION['empresa_id'] = $empresa['id']; 
             $_SESSION['nome_empresa'] = $empresa['nome'];
             echo "<script>window.location.href = './';</script>";
         } else {

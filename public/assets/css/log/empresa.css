@@ -90,7 +90,6 @@ main {
 
 .meio h1 {
   font-size: 3rem;
-  margin-bottom: 1.5rem;
   color: var(--verde-escuro);
   font-weight: 700;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);

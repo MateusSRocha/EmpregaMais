@@ -43,7 +43,7 @@
             if ($result && mysqli_num_rows($result) > 0) {
                 $usuario = mysqli_fetch_assoc($result);
 
-                // Dados pessoais
+               
                 echo "<div class='section'>";
                 echo "<h2>Dados Pessoais</h2>";
                 echo "<p><strong>Nome:</strong> " . htmlspecialchars($usuario['nome']) . "</p>";
@@ -53,7 +53,7 @@
                 echo "<p><strong>Data de Cadastro:</strong> " . htmlspecialchars($usuario['datacadastro']) . "</p>";
                 echo "</div>";
 
-                // Dados do currículo
+                
                 echo "<div class='section'>";
                 echo "<h2>Dados do Currículo</h2>";
                 if (!empty($usuario['endereco'])) {

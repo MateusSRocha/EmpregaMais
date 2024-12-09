@@ -1,16 +1,15 @@
 <?php
-// Antes de qualquer HTML ser exibido, verifique e defina os cookies
+
 if (!isset($_COOKIE['ultima_visita_empresa'])) {
     setcookie("ultima_visita_empresa", date("Y-m-d H:i:s"), time() + (365 * 24 * 60 * 60), "/");
 }
 
-// Abrindo a conexão com o banco de dados
+
 $con = mysqli_connect('localhost', 'root', '', 'empregamais');
 if (!$con) {
     die("Erro na conexão com o banco de dados: " . mysqli_connect_error());
 }
 
-// Consultando os currículos
 $query = "
     SELECT u.nome, u.telefone, c.area, c.experiencia, c.id_usuario
     FROM usuario u
@@ -18,7 +17,6 @@ $query = "
 ";
 $curriculos = mysqli_query($con, $query);
 
-// Verifique se a consulta retornou dados
 if (!$curriculos) {
     die("Erro na consulta SQL: " . mysqli_error($con));
 }
@@ -105,7 +103,6 @@ if (!$curriculos) {
         </main>
         <footer>
             <?php
-            // Verificando a última visita da empresa
             if (isset($_COOKIE['ultima_visita_empresa'])) {
                 echo "<p>Última visita da empresa: <span>" . htmlspecialchars($_COOKIE['ultima_visita_empresa']) . "</span></p>";
             } else {
@@ -118,6 +115,5 @@ if (!$curriculos) {
 </html>
 
 <?php 
-// Fechando a conexão com o banco
 mysqli_close($con); 
 ?>

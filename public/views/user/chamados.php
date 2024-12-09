@@ -1,16 +1,14 @@
 <?php
-// Inicie a sessão no início do arquivo e garanta que não há espaços antes de <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Conexão com o banco de dados
+
 $con = mysqli_connect('localhost', 'root', '', 'empregamais');
 if (!$con) {
     die('Erro na conexão: ' . mysqli_connect_error());
 }
 
-// Verifica se o usuário está logado
 if (!isset($_SESSION['id_usuario'])) {
     header('Location: ./views/log/index.php');
     exit();
@@ -18,7 +16,6 @@ if (!isset($_SESSION['id_usuario'])) {
 
 $id_usuario = $_SESSION['id_usuario'];
 
-// Consultas para candidaturas
 $query_candidaturas = "
     SELECT 
         vaga.tipo_vaga AS titulo, 
@@ -34,7 +31,6 @@ if ($result_candidaturas === false) {
     die('Erro na consulta de candidaturas: ' . mysqli_error($con));
 }
 
-// Consultas para entrevistas
 $query_entrevistas = "
     SELECT 
         vaga.tipo_vaga AS titulo, 

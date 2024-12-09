@@ -1,12 +1,11 @@
 <?php
 
-// Conexão com o banco de dados
+
 $con = mysqli_connect('localhost', 'root', '', 'empregamais');
 if (!$con) {
     die('Erro na conexão: ' . mysqli_connect_error()); 
 }
 
-// Verifica se a empresa está logada
 if (!isset($_SESSION['empresa_id'])) {
     echo "<script>alert('Você precisa estar logado como empresa para acessar esta página.');</script>";
     echo "<script>window.location.href = './loginempresa.php';</script>";
@@ -15,10 +14,9 @@ if (!isset($_SESSION['empresa_id'])) {
 
 $id_empresa = $_SESSION['empresa_id'];
 
-// Usando prepared statement para evitar SQL Injection
 $query_vagas = "SELECT * FROM vaga WHERE id_empresa = ?";
 $stmt = mysqli_prepare($con, $query_vagas);
-mysqli_stmt_bind_param($stmt, "i", $id_empresa); // "i" indica que o parâmetro é um inteiro
+mysqli_stmt_bind_param($stmt, "i", $id_empresa); 
 mysqli_stmt_execute($stmt);
 $result_vagas = mysqli_stmt_get_result($stmt);
 
@@ -52,7 +50,6 @@ if (!$result_vagas) {
         <div class="vagas-lista">
             <h2>Minhas Vagas</h2>
             <?php
-            // Exibe as vagas
             if (mysqli_num_rows($result_vagas) > 0) {
                 while ($vaga = mysqli_fetch_assoc($result_vagas)) {
                     $id_vaga = $vaga['id'];
@@ -61,8 +58,7 @@ if (!$result_vagas) {
                     echo "<p><strong>Id da Vaga:</strong> " . $id_vaga . "</p>";
                     echo "<p><strong>Detalhes:</strong> " . htmlspecialchars($vaga['detalhes']) . "</p>";
                     echo "<p><strong>Quantidade de Vagas:</strong> " . htmlspecialchars($vaga['quantidade']) . "</p>";
-                    
-                    // Formulário para enviar o id_vaga via POST
+
                     echo "<form action='candidatos.php' method='POST'>";
                     echo "<input type='hidden' name='id_vaga' value='$id_vaga'>";
                     echo "<button type='submit'>Ver Candidatos</button>";
@@ -80,7 +76,6 @@ if (!$result_vagas) {
 </html>
 
 <?php
-// Fecha a conexão com o banco de dados
 mysqli_stmt_close($stmt);
 mysqli_close($con);
 ?>

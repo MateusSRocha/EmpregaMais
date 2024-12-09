@@ -1,5 +1,5 @@
 <?php
-// Conexão com o banco de dados
+
 $con = mysqli_connect('localhost', 'root', '', 'empregamais');
 if (!$con) {
     die('Erro na conexão: ' . mysqli_connect_error());
@@ -9,21 +9,19 @@ if (!isset($_SESSION['empresa_id'])) {
     die('Você precisa estar logado como empresa para acessar esta página.');
 }
 
-$id_empresa = $_SESSION['empresa_id']; // ID da empresa logada
+$id_empresa = $_SESSION['empresa_id']; 
 
-// Verifica se o ID da vaga foi passado
+
 if (isset($_POST['id_vaga'])) {
     $id_vaga = $_POST['id_vaga'];
 
-    // Verifica se a vaga pertence à empresa logada
     $query_verifica_vaga = "SELECT * FROM vaga WHERE id = '$id_vaga' AND id_empresa = '$id_empresa'";
     $result_vaga = mysqli_query($con, $query_verifica_vaga);
 
     if (mysqli_num_rows($result_vaga) == 0) {
         die('Vaga não encontrada ou você não tem permissão para visualizar.');
     }
-
-    // Consulta para pegar os candidatos dessa vaga, incluindo a situação da candidatura
+    
     $query_candidatos = "SELECT u.id, u.nome, u.email, u.telefone, c.experiencia, c.area, ca.status
     FROM candidatura ca
     INNER JOIN usuario u ON ca.id_usuario = u.id
