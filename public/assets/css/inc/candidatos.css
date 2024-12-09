@@ -43,7 +43,7 @@ header {
     gap: 1.5rem;
 }
   
-.cabecalho_link a {
+.cabecalho_link  a {
     margin-top: 8px;
     color: var(--branco);
     font-weight: 600;
@@ -52,6 +52,7 @@ header {
     align-items: center;
     justify-content: center;
     font-size: 1.1rem;
+    text-decoration: none;
 }
   
 .cabecalho_link a:hover {
@@ -59,21 +60,6 @@ header {
     transform: scale(1.1);
 }
   
-.cabecalho_link li button {
-    background-color: var(--verde-escuro);
-    color: var(--branco);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border: none;
-    width: 100%;
-    font-size: 1rem;
-}
-  
-.cabecalho_link li button:hover {
-    color: var(--verde-claro);
-}
 
 main {
     padding: 2rem 5%;

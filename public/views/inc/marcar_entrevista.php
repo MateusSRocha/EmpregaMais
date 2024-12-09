@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!$id_usuario || !$id_vaga || !$data_entrevista) {
     } elseif (strtotime($data_entrevista) < strtotime(date('Y-m-d'))) {
-        echo "<p style='color:red;'>A data da entrevista deve ser uma data futura.</p>";
+        echo "<script>alert('A data da entrevista deve ser uma data futura.');</script>";
     } else {
         $id_usuario = mysqli_real_escape_string($con, $id_usuario);
         $id_vaga = mysqli_real_escape_string($con, $id_vaga);
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (mysqli_query($con, $query)) {
             echo "<script>alert('Solicitação de entrevista enviada com sucesso!');</script>";
-            header('Location: dashboard_empresa.php'); 
+            header('Location: vagas.php'); 
             exit;
         } else {
             echo "<p style='color:red;'>Erro ao enviar a solicitação: " . mysqli_error($con) . "</p>";
@@ -56,6 +56,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             --cinza-claro: #f3f3f3;
             --branco: #ffffff;
             --gradiente: linear-gradient(135deg, #2e8b57, #32cd32);
+        }
+
+        * {
+            list-style: none;
         }
         body {
             font-family: \'Poppins\', sans-serif;
@@ -83,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     gap: 1.5rem;
   }
   
-  .cabecalho_link a {
+  .cabecalho_link  a {
     margin-top: 8px;
     color: var(--branco);
     font-weight: 600;
@@ -92,12 +96,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     align-items: center;
     justify-content: center;
     font-size: 1.1rem;
-  }
+    text-decoration: none;
+}
   
-  .cabecalho_link a:hover {
+.cabecalho_link a:hover {
     color: var(--verde-claro);
     transform: scale(1.1);
-  }
+}
   
   .cabecalho_link li button {
     background-color: var(--verde-escuro);
@@ -166,7 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <div class="cabecalho_link">
             <ul>
-                <li><a href="index.php">Home</a></li>
+                <li><a href="vagas.php">Voltar</a></li>
             </ul>
         </div>
     </header>
