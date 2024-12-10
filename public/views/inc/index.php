@@ -5,7 +5,7 @@ if (!isset($_COOKIE['ultima_visita_empresa'])) {
 }
 
 
-$con = mysqli_connect('localhost', 'root', '', 'empregamais');
+$con = mysqli_connect('localhost', 'root', 'usbw', 'empregamais');
 if (!$con) {
     die("Erro na conexão com o banco de dados: " . mysqli_connect_error());
 }

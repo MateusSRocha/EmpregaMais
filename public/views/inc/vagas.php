@@ -1,7 +1,7 @@
 <?php
 
 
-$con = mysqli_connect('localhost', 'root', '', 'empregamais');
+$con = mysqli_connect('localhost', 'root', 'usbw', 'empregamais');
 if (!$con) {
     die('Erro na conexão: ' . mysqli_connect_error()); 
 }

@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect('localhost', 'root', '', 'empregamais');
+$con = mysqli_connect('localhost', 'root', 'usbw', 'empregamais');
 $pes = $_GET['pesquisa'];
 
 $query = "SELECT vaga.*, empresa.nome AS nome_empresa FROM vaga, empresa WHERE vaga.id_empresa=empresa.id AND (vaga.tipo_vaga LIKE '%$pes%' OR empresa.nome LIKE '%$pes%' OR vaga.experiencia LIKE '%$pes%' OR vaga.nivel_escolaridade LIKE '%$pes%' OR vaga.detalhes LIKE '%$pes%')";

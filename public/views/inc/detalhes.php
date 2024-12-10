@@ -25,7 +25,7 @@
         if (isset($_POST['id'])) {
             $id_usuario = intval($_POST['id']); 
 
-            $con = mysqli_connect('localhost', 'root', '', 'empregamais');
+            $con = mysqli_connect('localhost', 'root', 'usbw', 'empregamais');
             if (!$con) {
                 die("<p style='color: red;'>Erro na conexão: " . mysqli_connect_error() . "</p>");
             }
