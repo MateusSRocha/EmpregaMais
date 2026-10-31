@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/../config/conexao.php';
 
 session_start();
 
@@ -20,7 +21,7 @@ if (!isset($_SESSION['login'])) {
 
 setcookie("ultima_visita", date("Y-m-d H:i:s"), time() + (365 * 86.400), "/");
 
-$con = mysqli_connect('localhost', 'root', 'usbw', 'empregamais');
+
 
 // Login do usuário
 if (isset($_POST['login'])) {

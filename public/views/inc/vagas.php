@@ -1,7 +1,6 @@
 <?php
 
-
-$con = mysqli_connect('localhost', 'root', 'usbw', 'empregamais');
+require __DIR__ . '/../../../config/conexao.php';
 if (!$con) {
     die('Erro na conexão: ' . mysqli_connect_error()); 
 }
